@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# CS1591: Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CS1591.severity = none
+
+# CS1762: A reference was created to embedded interop assembly 'Microsoft.Office.Interop.Owc11, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c' because of an indirect reference to that assembly created by assembly 'AxInterop.OWC11, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null'. Consider changing the 'Embed Interop Types' property on either assembly.
+dotnet_diagnostic.CS1762.severity = silent
+
+# CS0649: Field 'frmAlert.components' is never assigned to, and will always have its default value null
+dotnet_diagnostic.CS0649.severity = none
