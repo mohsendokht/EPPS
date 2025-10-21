@@ -88,9 +88,11 @@ namespace ProductionPlanning
                 }
                 catch (Exception ex)
                 {
+                    cn.Close();
                     Logger.SaveError(Name + ".frmAuthentication_Load", ex.Message);
-                    MessageBox.Show("ارتباط با بانک اطلاعاتی برنامه ریزی با مشکل مواجه شد", Module1.MessagesTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
-                    Environment.Exit(0);
+                    Module1.mDBVersion = "0";
+                    // MessageBox.Show("ارتباط با بانک اطلاعاتی برنامه ریزی با مشکل مواجه شد", Module1.MessagesTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
+                    //Environment.Exit(0);
                     return;
                 }
             }
