@@ -17,7 +17,7 @@
     <ManifestKeyFile>ProductionPlanning_TemporaryKey.pfx</ManifestKeyFile>
     <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ApplicationIcon>Planing.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Planing.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -184,7 +184,7 @@
     <Compile Include="Controls\UserControl_LookUp.Designer.cs">
       <DependentUpon>UserControl_LookUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBChange\DBChange.cs" />
+    <Compile Include="Utils\DBChange.cs" />
     <Compile Include="Interfaces\IEPPSForm.cs" />
     <Compile Include="Model\CalendarDayWorkingTime.cs" />
     <Compile Include="Model\Contractor.cs" />
@@ -196,35 +196,35 @@
     <Compile Include="Model\PlanOperation.cs" />
     <Compile Include="My Project\MyNamespace.Dynamic.Designer.cs" />
     <Compile Include="My Project\MyNamespace.Static.1.Designer.cs" />
-    <Compile Include="Planning Forms\frmPlanningShow.cs">
+    <Compile Include="Forms\Planning Forms\frmPlanningShow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\frmPlanningShow.designer.cs">
+    <Compile Include="Forms\Planning Forms\frmPlanningShow.designer.cs">
       <DependentUpon>frmPlanningShow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\OperatorTasks\frmOperatorTask.cs">
+    <Compile Include="Forms\Planning Forms\OperatorTasks\frmOperatorTask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\OperatorTasks\frmOperatorTask.Designer.cs">
+    <Compile Include="Forms\Planning Forms\OperatorTasks\frmOperatorTask.Designer.cs">
       <DependentUpon>frmOperatorTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\OperatorTasks\frmOperatorTaskList.cs">
+    <Compile Include="Forms\Planning Forms\OperatorTasks\frmOperatorTaskList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\OperatorTasks\frmOperatorTaskList.Designer.cs">
+    <Compile Include="Forms\Planning Forms\OperatorTasks\frmOperatorTaskList.Designer.cs">
       <DependentUpon>frmOperatorTaskList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\Calendar Forms\CalendarShifts.cs" />
+    <Compile Include="Forms\Primary Definitions\Calendar Forms\CalendarShifts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ToolForms\AboutBox1.Designer.cs">
+    <Compile Include="Forms\ToolForms\AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolForms\AboutBox1.cs">
+    <Compile Include="Forms\ToolForms\AboutBox1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.cs" />
@@ -240,38 +240,38 @@
     <Compile Include="Calculational Reports\frmMachineProductionProgram.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolForms\frmDeleteConfirm.cs">
+    <Compile Include="Forms\ToolForms\frmDeleteConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolForms\frmDeleteConfirm.Designer.cs">
+    <Compile Include="Forms\ToolForms\frmDeleteConfirm.Designer.cs">
       <DependentUpon>frmDeleteConfirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolForms\ErrorLogForm.cs">
+    <Compile Include="Forms\ToolForms\ErrorLogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolForms\ErrorLogForm.Designer.cs">
+    <Compile Include="Forms\ToolForms\ErrorLogForm.Designer.cs">
       <DependentUpon>ErrorLogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolForms\frmMessage.cs">
+    <Compile Include="Forms\ToolForms\frmMessage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolForms\frmMessage.Designer.cs">
+    <Compile Include="Forms\ToolForms\frmMessage.Designer.cs">
       <DependentUpon>frmMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolForms\MyForm.cs">
+    <Compile Include="Forms\ToolForms\MyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolForms\MyForm.Designer.cs">
+    <Compile Include="Forms\ToolForms\MyForm.Designer.cs">
       <DependentUpon>MyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Class_ExportExcel.cs" />
     <Compile Include="Utils\DataSetConfiguration.cs" />
     <Compile Include="Utils\DbTool.cs" />
     <Compile Include="Utils\FarsiDateFunctions.cs" />
-    <Compile Include="frmAlert.designer.cs">
+    <Compile Include="Forms\Production Forms\frmAlert.designer.cs">
       <DependentUpon>frmAlert.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlert.cs">
+    <Compile Include="Forms\Production Forms\frmAlert.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAuthentication.designer.cs">
@@ -280,10 +280,10 @@
     <Compile Include="frmAuthentication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolForms\frmBackup.designer.cs">
+    <Compile Include="Forms\ToolForms\frmBackup.designer.cs">
       <DependentUpon>frmBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolForms\frmBackup.cs">
+    <Compile Include="Forms\ToolForms\frmBackup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utils\FileHelpers.cs" />
@@ -291,166 +291,166 @@
     <Compile Include="Model\PlanningRec.cs" />
     <Compile Include="Model\ShDateHour.cs" />
     <Compile Include="Utils\MyEnums.cs" />
-    <Compile Include="Planning Forms\Batch Forms\frmBatchsStatus.designer.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmBatchsStatus.designer.cs">
       <DependentUpon>frmBatchsStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmBatchsStatus.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmBatchsStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\CreateMSPForm.designer.cs">
+    <Compile Include="Forms\Planning Forms\CreateMSPForm.designer.cs">
       <DependentUpon>CreateMSPForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\CreateMSPForm.cs">
+    <Compile Include="Forms\Planning Forms\CreateMSPForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmBatchRecordsList.Designer.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmBatchRecordsList.Designer.cs">
       <DependentUpon>frmBatchRecordsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmBatchRecordsList.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmBatchRecordsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmDoneBatch.Designer.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmDoneBatch.Designer.cs">
       <DependentUpon>frmDoneBatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmDoneBatch.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmDoneBatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\frmPlanningConfirm.Designer.cs">
+    <Compile Include="Forms\Planning Forms\frmPlanningConfirm.Designer.cs">
       <DependentUpon>frmPlanningConfirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\frmPlanningConfirm.cs">
+    <Compile Include="Forms\Planning Forms\frmPlanningConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\frmSubbatchPlanningStop.designer.cs">
+    <Compile Include="Forms\Planning Forms\frmSubbatchPlanningStop.designer.cs">
       <DependentUpon>frmSubbatchPlanningStop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\frmSubbatchPlanningStop.cs">
+    <Compile Include="Forms\Planning Forms\frmSubbatchPlanningStop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmContractor.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmContractor.Designer.cs">
       <DependentUpon>frmContractor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmContractor.cs">
+    <Compile Include="Forms\Primary Definitions\frmContractor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmCustomer.designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmCustomer.designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmCustomer.cs">
+    <Compile Include="Forms\Primary Definitions\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmMachineNotAvailableReason.designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmMachineNotAvailableReason.designer.cs">
       <DependentUpon>frmMachineNotAvailableReason.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmMachineNotAvailableReason.cs">
+    <Compile Include="Forms\Primary Definitions\frmMachineNotAvailableReason.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmOperationUnit.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmOperationUnit.Designer.cs">
       <DependentUpon>frmOperationUnit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmOperationUnit.cs">
+    <Compile Include="Forms\Primary Definitions\frmOperationUnit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmOperator.designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmOperator.designer.cs">
       <DependentUpon>frmOperator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmOperator.cs">
+    <Compile Include="Forms\Primary Definitions\frmOperator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmSupplier.designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmSupplier.designer.cs">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmSupplier.cs">
+    <Compile Include="Forms\Primary Definitions\frmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmWorkPeriod.designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmWorkPeriod.designer.cs">
       <DependentUpon>frmWorkPeriod.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmWorkPeriod.cs">
+    <Compile Include="Forms\Primary Definitions\frmWorkPeriod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\UserChangeAccess.designer.cs">
+    <Compile Include="Forms\Primary Definitions\UserChangeAccess.designer.cs">
       <DependentUpon>UserChangeAccess.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\UserChangeAccess.cs">
+    <Compile Include="Forms\Primary Definitions\UserChangeAccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\UsersDefine.designer.cs">
+    <Compile Include="Forms\Primary Definitions\UsersDefine.designer.cs">
       <DependentUpon>UsersDefine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\UsersDefine.cs">
+    <Compile Include="Forms\Primary Definitions\UsersDefine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrintPreview.designer.cs">
+    <Compile Include="Forms\ToolForms\frmPrintPreview.designer.cs">
       <DependentUpon>frmPrintPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrintPreview.cs">
+    <Compile Include="Forms\ToolForms\frmPrintPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmCopyProductTree.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmCopyProductTree.Designer.cs">
       <DependentUpon>frmCopyProductTree.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmCopyProductTree.cs">
+    <Compile Include="Forms\Product Forms\frmCopyProductTree.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmExecutorMachine.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmExecutorMachine.Designer.cs">
       <DependentUpon>frmExecutorMachine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmExecutorMachine.cs">
+    <Compile Include="Forms\Product Forms\frmExecutorMachine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmHaltReason.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmHaltReason.Designer.cs">
       <DependentUpon>frmHaltReason.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmHaltReason.cs">
+    <Compile Include="Forms\Primary Definitions\frmHaltReason.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\frmMachineNotAvailable.Designer.cs">
+    <Compile Include="Forms\Planning Forms\frmMachineNotAvailable.Designer.cs">
       <DependentUpon>frmMachineNotAvailable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\frmMachineNotAvailable.cs">
+    <Compile Include="Forms\Planning Forms\frmMachineNotAvailable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\MPS Forms\frmMPS.designer.cs">
+    <Compile Include="Forms\Planning Forms\MPS Forms\frmMPS.designer.cs">
       <DependentUpon>frmMPS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\MPS Forms\frmMPS.cs">
+    <Compile Include="Forms\Planning Forms\MPS Forms\frmMPS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\MPS Forms\frmMPSCapametryShow.Designer.cs">
+    <Compile Include="Forms\Planning Forms\MPS Forms\frmMPSCapametryShow.Designer.cs">
       <DependentUpon>frmMPSCapametryShow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\MPS Forms\frmMPSCapametryShow.cs">
+    <Compile Include="Forms\Planning Forms\MPS Forms\frmMPSCapametryShow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmOperationBuiltGraphicView.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmOperationBuiltGraphicView.Designer.cs">
       <DependentUpon>frmOperationBuiltGraphicView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmOperationBuiltGraphicView.cs">
+    <Compile Include="Forms\Product Forms\frmOperationBuiltGraphicView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmSelectMatchedOperations.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmSelectMatchedOperations.Designer.cs">
       <DependentUpon>frmSelectMatchedOperations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmSelectMatchedOperations.cs">
+    <Compile Include="Forms\Product Forms\frmSelectMatchedOperations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmTreeNode.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmTreeNode.Designer.cs">
       <DependentUpon>frmTreeNode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmTreeNode.cs">
+    <Compile Include="Forms\Product Forms\frmTreeNode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order Objects\frmOrder.designer.cs">
+    <Compile Include="Forms\Order Objects\frmOrder.designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order Objects\frmOrder.cs">
+    <Compile Include="Forms\Order Objects\frmOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order Objects\frmOrdersList.designer.cs">
+    <Compile Include="Forms\Order Objects\frmOrdersList.designer.cs">
       <DependentUpon>frmOrdersList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order Objects\frmOrdersList.cs">
+    <Compile Include="Forms\Order Objects\frmOrdersList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calculational Reports\frmMachineEmptyTimes.designer.cs">
@@ -471,178 +471,178 @@
     <Compile Include="Calculational Reports\frmPartsPersonnelRequirement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production Forms\frmProductionConfilicts.Designer.cs">
+    <Compile Include="Forms\Production Forms\frmProductionConfilicts.Designer.cs">
       <DependentUpon>frmProductionConfilicts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production Forms\frmProductionConfilicts.cs">
+    <Compile Include="Forms\Production Forms\frmProductionConfilicts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production Forms\frmProductionHalt.Designer.cs">
+    <Compile Include="Forms\Production Forms\frmProductionHalt.Designer.cs">
       <DependentUpon>frmProductionHalt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production Forms\frmProductionHalt.cs">
+    <Compile Include="Forms\Production Forms\frmProductionHalt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmNature.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmNature.Designer.cs">
       <DependentUpon>frmNature.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmNature.cs">
+    <Compile Include="Forms\Primary Definitions\frmNature.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmOperationMaterial.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmOperationMaterial.Designer.cs">
       <DependentUpon>frmOperationMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmOperationMaterial.cs">
+    <Compile Include="Forms\Product Forms\frmOperationMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmOperationTitle.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmOperationTitle.Designer.cs">
       <DependentUpon>frmOperationTitle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmOperationTitle.cs">
+    <Compile Include="Forms\Primary Definitions\frmOperationTitle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\Calendar Forms\frmHoliday.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\Calendar Forms\frmHoliday.Designer.cs">
       <DependentUpon>frmHoliday.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\Calendar Forms\frmHoliday.cs">
+    <Compile Include="Forms\Primary Definitions\Calendar Forms\frmHoliday.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\frmPlanning.Designer.cs">
+    <Compile Include="Forms\Planning Forms\frmPlanning.Designer.cs">
       <DependentUpon>frmPlanning.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\frmPlanning.cs">
+    <Compile Include="Forms\Planning Forms\frmPlanning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmPreOperation.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmPreOperation.Designer.cs">
       <DependentUpon>frmPreOperation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmPreOperation.cs">
+    <Compile Include="Forms\Product Forms\frmPreOperation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmProduct.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmProduct.cs">
+    <Compile Include="Forms\Product Forms\frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production Forms\frmProductionHaltList.Designer.cs">
+    <Compile Include="Forms\Production Forms\frmProductionHaltList.Designer.cs">
       <DependentUpon>frmProductionHaltList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production Forms\frmProductionHaltList.cs">
+    <Compile Include="Forms\Production Forms\frmProductionHaltList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmProductTree.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmProductTree.Designer.cs">
       <DependentUpon>frmProductTree.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmProductTree.cs">
+    <Compile Include="Forms\Product Forms\frmProductTree.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmBractOperation.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmBractOperation.Designer.cs">
       <DependentUpon>frmBractOperation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmBractOperation.cs">
+    <Compile Include="Forms\Product Forms\frmBractOperation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmProductionBatch.Designer.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmProductionBatch.Designer.cs">
       <DependentUpon>frmProductionBatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmProductionBatch.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmProductionBatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\frmPlaningSubbatchsList.Designer.cs">
+    <Compile Include="Forms\Planning Forms\frmPlaningSubbatchsList.Designer.cs">
       <DependentUpon>frmPlaningSubbatchsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\frmPlaningSubbatchsList.cs">
+    <Compile Include="Forms\Planning Forms\frmPlaningSubbatchsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmProductTreeDetail.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmProductTreeDetail.Designer.cs">
       <DependentUpon>frmProductTreeDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmProductTreeDetail.cs">
+    <Compile Include="Forms\Product Forms\frmProductTreeDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product Forms\frmProductTreesList.Designer.cs">
+    <Compile Include="Forms\Product Forms\frmProductTreesList.Designer.cs">
       <DependentUpon>frmProductTreesList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product Forms\frmProductTreesList.cs">
+    <Compile Include="Forms\Product Forms\frmProductTreesList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\MPS Forms\frmMPSList.designer.cs">
+    <Compile Include="Forms\Planning Forms\MPS Forms\frmMPSList.designer.cs">
       <DependentUpon>frmMPSList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\MPS Forms\frmMPSList.cs">
+    <Compile Include="Forms\Planning Forms\MPS Forms\frmMPSList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production Forms\frmRealProduction.Designer.cs">
+    <Compile Include="Forms\Production Forms\frmRealProduction.Designer.cs">
       <DependentUpon>frmRealProduction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production Forms\frmRealProduction.cs">
+    <Compile Include="Forms\Production Forms\frmRealProduction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production Forms\frmRealProductionList.Designer.cs">
+    <Compile Include="Forms\Production Forms\frmRealProductionList.Designer.cs">
       <DependentUpon>frmRealProductionList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production Forms\frmRealProductionList.cs">
+    <Compile Include="Forms\Production Forms\frmRealProductionList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecordsLists.designer.cs">
+    <Compile Include="Forms\ToolForms\frmRecordsLists.designer.cs">
       <DependentUpon>frmRecordsLists.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRecordsLists.cs">
+    <Compile Include="Forms\ToolForms\frmRecordsLists.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmStore.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmStore.Designer.cs">
       <DependentUpon>frmStore.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmStore.cs">
+    <Compile Include="Forms\Primary Definitions\frmStore.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmTestUnit.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmTestUnit.Designer.cs">
       <DependentUpon>frmTestUnit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmTestUnit.cs">
+    <Compile Include="Forms\Primary Definitions\frmTestUnit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmProductionSubbatch.Designer.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmProductionSubbatch.Designer.cs">
       <DependentUpon>frmProductionSubbatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planning Forms\Batch Forms\frmProductionSubbatch.cs">
+    <Compile Include="Forms\Planning Forms\Batch Forms\frmProductionSubbatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmUnitsRelation.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmUnitsRelation.Designer.cs">
       <DependentUpon>frmUnitsRelation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmUnitsRelation.cs">
+    <Compile Include="Forms\Primary Definitions\frmUnitsRelation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmPrimaryMaterial.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmPrimaryMaterial.Designer.cs">
       <DependentUpon>frmPrimaryMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmPrimaryMaterial.cs">
+    <Compile Include="Forms\Primary Definitions\frmPrimaryMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmMachine.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmMachine.Designer.cs">
       <DependentUpon>frmMachine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmMachine.cs">
+    <Compile Include="Forms\Primary Definitions\frmMachine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\frmReplacementMachines.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\frmReplacementMachines.Designer.cs">
       <DependentUpon>frmReplacementMachines.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\frmReplacementMachines.cs">
+    <Compile Include="Forms\Primary Definitions\frmReplacementMachines.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\Calendar Forms\frmCalendar.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\Calendar Forms\frmCalendar.Designer.cs">
       <DependentUpon>frmCalendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\Calendar Forms\frmCalendar.cs">
+    <Compile Include="Forms\Primary Definitions\Calendar Forms\frmCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Primary Definitions\Calendar Forms\frmCalendarDays.Designer.cs">
+    <Compile Include="Forms\Primary Definitions\Calendar Forms\frmCalendarDays.Designer.cs">
       <DependentUpon>frmCalendarDays.cs</DependentUpon>
     </Compile>
-    <Compile Include="Primary Definitions\Calendar Forms\frmCalendarDays.cs">
+    <Compile Include="Forms\Primary Definitions\Calendar Forms\frmCalendarDays.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -665,7 +665,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Production Forms\RealProductionModule.cs" />
+    <Compile Include="Forms\Production Forms\RealProductionModule.cs" />
     <Compile Include="Utils\PlanTool.cs" />
     <Compile Include="Utils\CommonTool.cs" />
     <Compile Include="Utils\WorkingTimeCalculater.cs" />
@@ -677,16 +677,16 @@
     <EmbeddedResource Include="Controls\UserControl_LookUp.resx">
       <DependentUpon>UserControl_LookUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\frmPlanningShow.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\frmPlanningShow.resx">
       <DependentUpon>frmPlanningShow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\OperatorTasks\frmOperatorTask.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\OperatorTasks\frmOperatorTask.resx">
       <DependentUpon>frmOperatorTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\OperatorTasks\frmOperatorTaskList.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\OperatorTasks\frmOperatorTaskList.resx">
       <DependentUpon>frmOperatorTaskList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolForms\AboutBox1.resx">
+    <EmbeddedResource Include="Forms\ToolForms\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -698,116 +698,116 @@
       <DependentUpon>frmMachineProductionProgram.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlert.resx">
+    <EmbeddedResource Include="Forms\Production Forms\frmAlert.resx">
       <DependentUpon>frmAlert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAuthentication.resx">
       <DependentUpon>frmAuthentication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolForms\frmDeleteConfirm.resx">
+    <EmbeddedResource Include="Forms\ToolForms\frmDeleteConfirm.resx">
       <DependentUpon>frmDeleteConfirm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolForms\ErrorLogForm.resx">
+    <EmbeddedResource Include="Forms\ToolForms\ErrorLogForm.resx">
       <DependentUpon>ErrorLogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolForms\frmBackup.resx">
+    <EmbeddedResource Include="Forms\ToolForms\frmBackup.resx">
       <DependentUpon>frmBackup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\Batch Forms\frmBatchsStatus.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\Batch Forms\frmBatchsStatus.resx">
       <DependentUpon>frmBatchsStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\CreateMSPForm.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\CreateMSPForm.resx">
       <DependentUpon>CreateMSPForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\Batch Forms\frmBatchRecordsList.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\Batch Forms\frmBatchRecordsList.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmBatchRecordsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\Batch Forms\frmDoneBatch.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\Batch Forms\frmDoneBatch.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmDoneBatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\frmPlanningConfirm.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\frmPlanningConfirm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmPlanningConfirm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\frmSubbatchPlanningStop.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\frmSubbatchPlanningStop.resx">
       <DependentUpon>frmSubbatchPlanningStop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmContractor.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmContractor.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmContractor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmCustomer.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmMachineNotAvailableReason.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmMachineNotAvailableReason.resx">
       <DependentUpon>frmMachineNotAvailableReason.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmOperationUnit.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmOperationUnit.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmOperationUnit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmOperator.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmOperator.resx">
       <DependentUpon>frmOperator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmSupplier.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmWorkPeriod.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmWorkPeriod.resx">
       <DependentUpon>frmWorkPeriod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\UserChangeAccess.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\UserChangeAccess.resx">
       <DependentUpon>UserChangeAccess.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\UsersDefine.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\UsersDefine.resx">
       <DependentUpon>UsersDefine.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintPreview.resx">
+    <EmbeddedResource Include="Forms\ToolForms\frmPrintPreview.resx">
       <DependentUpon>frmPrintPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmCopyProductTree.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmCopyProductTree.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmCopyProductTree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmExecutorMachine.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmExecutorMachine.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmExecutorMachine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmHaltReason.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmHaltReason.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmHaltReason.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\frmMachineNotAvailable.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\frmMachineNotAvailable.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmMachineNotAvailable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\MPS Forms\frmMPS.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\MPS Forms\frmMPS.resx">
       <DependentUpon>frmMPS.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\MPS Forms\frmMPSCapametryShow.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\MPS Forms\frmMPSCapametryShow.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmMPSCapametryShow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmOperationBuiltGraphicView.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmOperationBuiltGraphicView.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmOperationBuiltGraphicView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmSelectMatchedOperations.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmSelectMatchedOperations.resx">
       <DependentUpon>frmSelectMatchedOperations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmTreeNode.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmTreeNode.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmTreeNode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order Objects\frmOrder.resx">
+    <EmbeddedResource Include="Forms\Order Objects\frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order Objects\frmOrdersList.resx">
+    <EmbeddedResource Include="Forms\Order Objects\frmOrdersList.resx">
       <DependentUpon>frmOrdersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calculational Reports\frmMachineEmptyTimes.resx">
@@ -821,119 +821,119 @@
     <EmbeddedResource Include="Calculational Reports\frmPartsPersonnelRequirement.resx">
       <DependentUpon>frmPartsPersonnelRequirement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production Forms\frmProductionConfilicts.resx">
+    <EmbeddedResource Include="Forms\Production Forms\frmProductionConfilicts.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductionConfilicts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production Forms\frmProductionHalt.resx">
+    <EmbeddedResource Include="Forms\Production Forms\frmProductionHalt.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductionHalt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmNature.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmNature.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmNature.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmOperationMaterial.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmOperationMaterial.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmOperationMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmOperationTitle.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmOperationTitle.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmOperationTitle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\Calendar Forms\frmHoliday.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\Calendar Forms\frmHoliday.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmHoliday.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\frmPlanning.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\frmPlanning.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmPlanning.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmPreOperation.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmPreOperation.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmPreOperation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmProduct.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmProduct.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production Forms\frmProductionHaltList.resx">
+    <EmbeddedResource Include="Forms\Production Forms\frmProductionHaltList.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductionHaltList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmProductTree.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmProductTree.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductTree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmBractOperation.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmBractOperation.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmBractOperation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\Batch Forms\frmProductionBatch.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\Batch Forms\frmProductionBatch.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductionBatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\frmPlaningSubbatchsList.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\frmPlaningSubbatchsList.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmPlaningSubbatchsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmProductTreeDetail.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmProductTreeDetail.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductTreeDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product Forms\frmProductTreesList.resx">
+    <EmbeddedResource Include="Forms\Product Forms\frmProductTreesList.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductTreesList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\MPS Forms\frmMPSList.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\MPS Forms\frmMPSList.resx">
       <DependentUpon>frmMPSList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production Forms\frmRealProduction.resx">
+    <EmbeddedResource Include="Forms\Production Forms\frmRealProduction.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmRealProduction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production Forms\frmRealProductionList.resx">
+    <EmbeddedResource Include="Forms\Production Forms\frmRealProductionList.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmRealProductionList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecordsLists.resx">
+    <EmbeddedResource Include="Forms\ToolForms\frmRecordsLists.resx">
       <DependentUpon>frmRecordsLists.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmStore.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmStore.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmTestUnit.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmTestUnit.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmTestUnit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planning Forms\Batch Forms\frmProductionSubbatch.resx">
+    <EmbeddedResource Include="Forms\Planning Forms\Batch Forms\frmProductionSubbatch.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmProductionSubbatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmUnitsRelation.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmUnitsRelation.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmUnitsRelation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmPrimaryMaterial.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmPrimaryMaterial.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmPrimaryMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmMachine.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmMachine.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmMachine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\frmReplacementMachines.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\frmReplacementMachines.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmReplacementMachines.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\Calendar Forms\frmCalendar.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\Calendar Forms\frmCalendar.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmCalendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Primary Definitions\Calendar Forms\frmCalendarDays.resx">
+    <EmbeddedResource Include="Forms\Primary Definitions\Calendar Forms\frmCalendarDays.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmCalendarDays.cs</DependentUpon>
     </EmbeddedResource>
@@ -947,10 +947,10 @@
       <CustomToolNamespace>ProductionPlanning.My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolForms\frmMessage.resx">
+    <EmbeddedResource Include="Forms\ToolForms\frmMessage.resx">
       <DependentUpon>frmMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolForms\MyForm.resx">
+    <EmbeddedResource Include="Forms\ToolForms\MyForm.resx">
       <DependentUpon>MyForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -992,10 +992,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB_Sripts\EPPS_ProductionConsumeMaterial.sql" />
-    <Content Include="DB_Sripts\EPPS_Remove_Data_SQLQuery.sql" />
-    <Content Include="ProductionPlanning.ico" />
-    <Content Include="Planing.ico" />
+    <Content Include="Resources\DB_Sripts\EPPS_ProductionConsumeMaterial.sql" />
+    <Content Include="Resources\DB_Sripts\EPPS_Remove_Data_SQLQuery.sql" />
+    <Content Include="Resources\ProductionPlanning.ico" />
+    <Content Include="Resources\Planing.ico" />
     <Content Include="Resources\ACTIVITL1.ICO" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
