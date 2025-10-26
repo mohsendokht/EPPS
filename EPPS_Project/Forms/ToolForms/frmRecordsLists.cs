@@ -116,7 +116,7 @@ namespace ProductionPlanning
 
                 case ListFormCaller.LFC_TOOLTYPES:
                     {
-                        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType] WHERE [IsDeleted] = 0", "ID");
+                        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType] ", "ID");
                         Prepare_To_Show_TablesRecordList("Tbl_ToolType", "انواع قالب و ابزارالات");
                         break;
                     }
@@ -466,7 +466,7 @@ namespace ProductionPlanning
                 case ListFormCaller.LFC_TOOLS:
                     {
                         // بارگذاری داده‌های کمکی برای ComboBox
-                        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType] WHERE [IsDeleted] = 0 ORDER BY [TypeName]", "ID");
+                        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType]", "ID");
 
                         // تنظیم رابطه بین جداول
                         fkColumn = new ForeignKeyConstraint("fk_Tools_ToolTypes",
