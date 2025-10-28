@@ -1,4 +1,6 @@
-﻿namespace ProductionPlanning
+﻿using System.Drawing;
+
+namespace ProductionPlanning
 {
     partial class frmToolType
     {
@@ -37,7 +39,7 @@
             // 
             // txtTypeName
             // 
-            this.txtTypeName.Location = new System.Drawing.Point(81, 40);
+            this.txtTypeName.Location = new System.Drawing.Point(88, 40);
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTypeName.Size = new System.Drawing.Size(220, 22);
@@ -45,10 +47,12 @@
             // 
             // cmdExit
             // 
+            this.cmdExit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmdExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdExit.Location = new System.Drawing.Point(57, 102);
             this.cmdExit.Name = "cmdExit";
             this.cmdExit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmdExit.Size = new System.Drawing.Size(75, 23);
+            this.cmdExit.Size = new System.Drawing.Size(100, 23);
             this.cmdExit.TabIndex = 1;
             this.cmdExit.Text = "خروج";
             this.cmdExit.UseVisualStyleBackColor = true;
@@ -57,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 43);
+            this.label1.Location = new System.Drawing.Point(314, 43);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(45, 16);
@@ -66,10 +70,12 @@
             // 
             // cmdDelete
             // 
+            this.cmdDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmdDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdDelete.Location = new System.Drawing.Point(176, 102);
             this.cmdDelete.Name = "cmdDelete";
             this.cmdDelete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmdDelete.Size = new System.Drawing.Size(75, 23);
+            this.cmdDelete.Size = new System.Drawing.Size(100, 23);
             this.cmdDelete.TabIndex = 3;
             this.cmdDelete.Text = "حذف";
             this.cmdDelete.UseVisualStyleBackColor = true;
@@ -77,10 +83,12 @@
             // 
             // cmdSave
             // 
+            this.cmdSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmdSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdSave.Location = new System.Drawing.Point(295, 102);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmdSave.Size = new System.Drawing.Size(75, 23);
+            this.cmdSave.Size = new System.Drawing.Size(100, 23);
             this.cmdSave.TabIndex = 4;
             this.cmdSave.Text = "ذخیره";
             this.cmdSave.UseVisualStyleBackColor = true;

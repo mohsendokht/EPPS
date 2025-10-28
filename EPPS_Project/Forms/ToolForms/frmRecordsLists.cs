@@ -135,7 +135,8 @@ namespace ProductionPlanning
                         T.[ToolLocation],
                         T.[MaintenanceCycle],
                         T.[CreatedAt],
-                        T.[ModifiedAt]
+                        T.[ModifiedAt],
+                        T.[IsDeleted] 
                     FROM [Tbl_Tools] T
                     LEFT JOIN [Tbl_ToolType] TT ON T.ToolTypeID = TT.ID
                     WHERE T.[IsDeleted] = 0";
@@ -1446,6 +1447,8 @@ namespace ProductionPlanning
                             withBlock.Columns["MaintenanceCycle"].HeaderText = "دوره تعمیر و نگهداری";
                             withBlock.Columns["CreatedAt"].Visible = false;
                             withBlock.Columns["ModifiedAt"].Visible = false;
+                            withBlock.Columns["IsDeleted"].Visible = false;
+
                             break;
                         }
                     case ListFormCaller.LFC_OPERATRIONSTITLES:

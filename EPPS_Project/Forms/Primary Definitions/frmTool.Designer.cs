@@ -1,4 +1,11 @@
-﻿namespace ProductionPlanning
+﻿using System;
+using System.Diagnostics;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+using Microsoft.VisualBasic.CompilerServices;
+
+namespace ProductionPlanning
 {
     partial class frmTool
     {
@@ -53,100 +60,109 @@
             // 
             // txtToolCode
             // 
-            this.txtToolCode.Location = new System.Drawing.Point(556, 23);
+            this.txtToolCode.Location = new System.Drawing.Point(513, 23);
             this.txtToolCode.Name = "txtToolCode";
             this.txtToolCode.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtToolCode.Size = new System.Drawing.Size(120, 22);
+            this.txtToolCode.Size = new System.Drawing.Size(180, 22);
             this.txtToolCode.TabIndex = 0;
             // 
             // txtToolName
             // 
-            this.txtToolName.Location = new System.Drawing.Point(556, 61);
+            this.txtToolName.Location = new System.Drawing.Point(513, 61);
             this.txtToolName.Name = "txtToolName";
             this.txtToolName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtToolName.Size = new System.Drawing.Size(120, 22);
+            this.txtToolName.Size = new System.Drawing.Size(180, 22);
             this.txtToolName.TabIndex = 1;
             // 
             // txtTechnicalSpecs
             // 
-            this.txtTechnicalSpecs.Location = new System.Drawing.Point(556, 139);
+            this.txtTechnicalSpecs.Location = new System.Drawing.Point(513, 139);
             this.txtTechnicalSpecs.Multiline = true;
             this.txtTechnicalSpecs.Name = "txtTechnicalSpecs";
             this.txtTechnicalSpecs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTechnicalSpecs.Size = new System.Drawing.Size(120, 60);
+            this.txtTechnicalSpecs.Size = new System.Drawing.Size(180, 60);
             this.txtTechnicalSpecs.TabIndex = 2;
             // 
             // txtToolLocation
             // 
-            this.txtToolLocation.Location = new System.Drawing.Point(113, 98);
+            this.txtToolLocation.Location = new System.Drawing.Point(83, 112);
             this.txtToolLocation.Name = "txtToolLocation";
             this.txtToolLocation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtToolLocation.Size = new System.Drawing.Size(120, 22);
+            this.txtToolLocation.Size = new System.Drawing.Size(180, 22);
             this.txtToolLocation.TabIndex = 3;
             // 
             // txtMaintenanceCycle
             // 
-            this.txtMaintenanceCycle.Location = new System.Drawing.Point(113, 136);
+            this.txtMaintenanceCycle.Location = new System.Drawing.Point(83, 150);
             this.txtMaintenanceCycle.Name = "txtMaintenanceCycle";
             this.txtMaintenanceCycle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtMaintenanceCycle.Size = new System.Drawing.Size(120, 22);
+            this.txtMaintenanceCycle.Size = new System.Drawing.Size(180, 22);
             this.txtMaintenanceCycle.TabIndex = 4;
             // 
             // cmbToolTypeID
             // 
             this.cmbToolTypeID.FormattingEnabled = true;
-            this.cmbToolTypeID.Location = new System.Drawing.Point(556, 99);
+            this.cmbToolTypeID.Location = new System.Drawing.Point(513, 99);
             this.cmbToolTypeID.Name = "cmbToolTypeID";
             this.cmbToolTypeID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbToolTypeID.Size = new System.Drawing.Size(121, 24);
+            this.cmbToolTypeID.Size = new System.Drawing.Size(180, 24);
             this.cmbToolTypeID.TabIndex = 5;
             // 
             // numCurrentQuantity
             // 
-            this.numCurrentQuantity.Location = new System.Drawing.Point(113, 22);
+            this.numCurrentQuantity.Location = new System.Drawing.Point(83, 36);
             this.numCurrentQuantity.Name = "numCurrentQuantity";
             this.numCurrentQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.numCurrentQuantity.Size = new System.Drawing.Size(120, 22);
+            this.numCurrentQuantity.Size = new System.Drawing.Size(180, 22);
             this.numCurrentQuantity.TabIndex = 6;
             // 
             // numMinStockLevel
             // 
-            this.numMinStockLevel.Location = new System.Drawing.Point(113, 60);
+            this.numMinStockLevel.Location = new System.Drawing.Point(83, 74);
             this.numMinStockLevel.Name = "numMinStockLevel";
             this.numMinStockLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.numMinStockLevel.Size = new System.Drawing.Size(120, 22);
+            this.numMinStockLevel.Size = new System.Drawing.Size(180, 22);
             this.numMinStockLevel.TabIndex = 7;
             // 
             // cmdExit
             // 
+            this.cmdExit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmdExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdExit.Location = new System.Drawing.Point(170, 251);
             this.cmdExit.Name = "cmdExit";
             this.cmdExit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmdExit.Size = new System.Drawing.Size(75, 23);
+            this.cmdExit.Size = new System.Drawing.Size(100, 23);
             this.cmdExit.TabIndex = 8;
             this.cmdExit.Text = "خروج";
+            this.cmdExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdExit.UseVisualStyleBackColor = true;
             this.cmdExit.Click += new System.EventHandler(this.cmdExit_Click);
             // 
             // cmdDelete
             // 
+            this.cmdDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmdDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdDelete.Location = new System.Drawing.Point(365, 251);
             this.cmdDelete.Name = "cmdDelete";
             this.cmdDelete.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmdDelete.Size = new System.Drawing.Size(75, 23);
+            this.cmdDelete.Size = new System.Drawing.Size(100, 23);
             this.cmdDelete.TabIndex = 9;
             this.cmdDelete.Text = "حذف";
+            this.cmdDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdDelete.UseVisualStyleBackColor = true;
             this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
             // 
             // cmdSave
             // 
+            this.cmdSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmdSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdSave.Location = new System.Drawing.Point(560, 251);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmdSave.Size = new System.Drawing.Size(75, 23);
+            this.cmdSave.Size = new System.Drawing.Size(100, 23);
             this.cmdSave.TabIndex = 10;
             this.cmdSave.Text = "ذخیره";
+            this.cmdSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdSave.UseVisualStyleBackColor = true;
             this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
             // 
@@ -193,7 +209,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(293, 23);
+            this.label5.Location = new System.Drawing.Point(293, 37);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(89, 16);
@@ -203,7 +219,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(293, 61);
+            this.label6.Location = new System.Drawing.Point(293, 75);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(137, 16);
@@ -213,7 +229,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(293, 99);
+            this.label7.Location = new System.Drawing.Point(293, 113);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(61, 16);
@@ -223,7 +239,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(293, 137);
+            this.label8.Location = new System.Drawing.Point(293, 151);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(82, 16);
