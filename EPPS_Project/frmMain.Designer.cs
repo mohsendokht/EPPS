@@ -44,6 +44,8 @@ namespace ProductionPlanning
             this._MenuItem1_4 = new System.Windows.Forms.ToolStripMenuItem();
             this._MenuItem1_6 = new System.Windows.Forms.ToolStripMenuItem();
             this._MenuItem1_8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MOLDS_AND_TOOLS = new System.Windows.Forms.ToolStripMenuItem();
+            this.TOOLTYPES = new System.Windows.Forms.ToolStripMenuItem();
             this._MenuItem1_2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItem1_9 = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,6 +150,8 @@ namespace ProductionPlanning
             this._MenuItem1_4,
             this._MenuItem1_6,
             this._MenuItem1_8,
+            this.MOLDS_AND_TOOLS,
+            this.TOOLTYPES,
             this._MenuItem1_2,
             this.ToolStripMenuItem2,
             this.MenuItem1_9,
@@ -223,6 +227,20 @@ namespace ProductionPlanning
             this._MenuItem1_8.Size = new System.Drawing.Size(393, 26);
             this._MenuItem1_8.Text = "مشخصات علت های توقف عملیات";
             this._MenuItem1_8.Click += new System.EventHandler(this.MenuItem1_8_Click);
+            // 
+            // MOLDS_AND_TOOLS
+            // 
+            this.MOLDS_AND_TOOLS.Name = "MOLDS_AND_TOOLS";
+            this.MOLDS_AND_TOOLS.Size = new System.Drawing.Size(393, 26);
+            this.MOLDS_AND_TOOLS.Text = "مشخصات قالب ها و ابزار آلات";
+            this.MOLDS_AND_TOOLS.Click += new System.EventHandler(this.MOLDS_AND_TOOLS_Click);
+            // 
+            // TOOLTYPES
+            // 
+            this.TOOLTYPES.Name = "TOOLTYPES";
+            this.TOOLTYPES.Size = new System.Drawing.Size(393, 26);
+            this.TOOLTYPES.Text = "انواع قالب و ابزارآلات";
+            this.TOOLTYPES.Click += new System.EventHandler(this.TOOLTYPES_Click);
             // 
             // _MenuItem1_2
             // 
@@ -1851,6 +1869,8 @@ namespace ProductionPlanning
         private ToolStripMenuItem _MenuItem1_15;
         private ToolStripMenuItem mnuTools_ErrorsLogged;
         private ToolStripMenuItem _MenuItem3_6;
+        private ToolStripMenuItem MOLDS_AND_TOOLS;
+        private ToolStripMenuItem TOOLTYPES;
 
         internal ToolStripMenuItem MenuItem1_15
         {
