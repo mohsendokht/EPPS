@@ -185,15 +185,11 @@
     <Compile Include="Controls\UserControl_LookUp.Designer.cs">
       <DependentUpon>UserControl_LookUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Primary Definitions\frmTool.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\Primary Definitions\frmTool.cs" />
     <Compile Include="Forms\Primary Definitions\frmTool.Designer.cs">
       <DependentUpon>frmTool.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Primary Definitions\frmToolType.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\Primary Definitions\frmToolType.cs" />
     <Compile Include="Forms\Primary Definitions\frmToolType.Designer.cs">
       <DependentUpon>frmToolType.cs</DependentUpon>
     </Compile>
