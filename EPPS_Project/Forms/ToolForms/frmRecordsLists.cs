@@ -114,37 +114,37 @@ namespace ProductionPlanning
             switch (this.CallerForm)
             {
 
-                case ListFormCaller.LFC_TOOLTYPES:
-                    {
-                        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType] ", "ID");
-                        Prepare_To_Show_TablesRecordList("Tbl_ToolType", "انواع قالب و ابزارالات");
-                        break;
-                    }
+                //case ListFormCaller.LFC_TOOLTYPES:
+                //    {
+                //        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType] ", "ID");
+                //        Prepare_To_Show_TablesRecordList("Tbl_ToolType", "انواع قالب و ابزارالات");
+                //        break;
+                //    }
 
-                case ListFormCaller.LFC_TOOLS:
-                    {
-                        string selectStr = @"SELECT 
-                        T.[ID],
-                        T.[ToolCode],
-                        T.[ToolName],
-                        T.[ToolTypeID],
-                        TT.[TypeName],
-                        T.[TechnicalSpecs],
-                        T.[CurrentQuantity],
-                        T.[MinStockLevel],
-                        T.[ToolLocation],
-                        T.[MaintenanceCycle],
-                        T.[CreatedAt],
-                        T.[ModifiedAt],
-                        T.[IsDeleted] 
-                    FROM [Tbl_Tools] T
-                    LEFT JOIN [Tbl_ToolType] TT ON T.ToolTypeID = TT.ID
-                    WHERE T.[IsDeleted] = 0";
+                //case ListFormCaller.LFC_TOOLS:
+                //    {
+                //        string selectStr = @"SELECT 
+                //        T.[ID],
+                //        T.[ToolCode],
+                //        T.[ToolName],
+                //        T.[ToolTypeID],
+                //        TT.[TypeName],
+                //        T.[TechnicalSpecs],
+                //        T.[CurrentQuantity],
+                //        T.[MinStockLevel],
+                //        T.[ToolLocation],
+                //        T.[MaintenanceCycle],
+                //        T.[CreatedAt],
+                //        T.[ModifiedAt],
+                //        T.[IsDeleted] 
+                //    FROM [Tbl_Tools] T
+                //    LEFT JOIN [Tbl_ToolType] TT ON T.ToolTypeID = TT.ID
+                //    WHERE T.[IsDeleted] = 0";
 
-                        DataSetConfig.FillDataSet("Tbl_Tools", "Tbl_Tools", selectStr, "ID");
-                        Prepare_To_Show_TablesRecordList("Tbl_Tools", "قالب ها و ابزار آلات");
-                        break;
-                    }
+                //        DataSetConfig.FillDataSet("Tbl_Tools", "Tbl_Tools", selectStr, "ID");
+                //        Prepare_To_Show_TablesRecordList("Tbl_Tools", "قالب ها و ابزار آلات");
+                //        break;
+                //    }
                 case ListFormCaller.LFC_OPERATRIONSTITLES:
                     {
                         DataSetConfig.FillDataSet("Tbl_OperationsDefaultTitles", "Tbl_OperationsDefaultTitles", "Select * From Tbl_OperationsDefaultTitles", "Code");
@@ -449,51 +449,51 @@ namespace ProductionPlanning
             ForeignKeyConstraint fkColumn;
             switch (this.CallerForm)
             {
-                case ListFormCaller.LFC_TOOLTYPES:
-                    {
-                        var objForm = new frmToolType();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+                //case ListFormCaller.LFC_TOOLTYPES:
+                //    {
+                //        var objForm = new frmToolType();
+                //        objForm.ListForm = this;
+                //        objForm.ListForm.FormMode = mFormMode;
+                //        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+                //        {
+                //            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+                //            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+                //        }
+                //        DetailsResult = objForm.ShowDialog();
+                //        objForm.Dispose();
+                //        break;
+                //    }
 
-                case ListFormCaller.LFC_TOOLS:
-                    {
-                        // بارگذاری داده‌های کمکی برای ComboBox
-                        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType]", "ID");
+                //case ListFormCaller.LFC_TOOLS:
+                //    {
+                //        // بارگذاری داده‌های کمکی برای ComboBox
+                //        DataSetConfig.FillDataSet("Tbl_ToolType", "Tbl_ToolType", "SELECT [ID],[TypeName] FROM [Tbl_ToolType]", "ID");
 
-                        // تنظیم رابطه بین جداول
-                        fkColumn = new ForeignKeyConstraint("fk_Tools_ToolTypes",
-                            dsProductionPlanning.Tables["Tbl_ToolType"].Columns["ID"],
-                            dsProductionPlanning.Tables["Tbl_Tools"].Columns["ToolTypeID"]);
-                        fkColumn.AcceptRejectRule = AcceptRejectRule.None;
-                        fkColumn.DeleteRule = Rule.None;
-                        fkColumn.UpdateRule = Rule.Cascade;
-                        dsProductionPlanning.Tables["Tbl_Tools"].Constraints.Add(fkColumn);
+                //        // تنظیم رابطه بین جداول
+                //        fkColumn = new ForeignKeyConstraint("fk_Tools_ToolTypes",
+                //            dsProductionPlanning.Tables["Tbl_ToolType"].Columns["ID"],
+                //            dsProductionPlanning.Tables["Tbl_Tools"].Columns["ToolTypeID"]);
+                //        fkColumn.AcceptRejectRule = AcceptRejectRule.None;
+                //        fkColumn.DeleteRule = Rule.None;
+                //        fkColumn.UpdateRule = Rule.Cascade;
+                //        dsProductionPlanning.Tables["Tbl_Tools"].Constraints.Add(fkColumn);
 
-                        dsProductionPlanning.Relations.Add("ToolTypes_Tools",
-                            dsProductionPlanning.Tables["Tbl_ToolType"].Columns["ID"],
-                            dsProductionPlanning.Tables["Tbl_Tools"].Columns["ToolTypeID"]);
+                //        dsProductionPlanning.Relations.Add("ToolTypes_Tools",
+                //            dsProductionPlanning.Tables["Tbl_ToolType"].Columns["ID"],
+                //            dsProductionPlanning.Tables["Tbl_Tools"].Columns["ToolTypeID"]);
 
-                        var objForm = new frmTool();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+                //        var objForm = new frmTool();
+                //        objForm.ListForm = this;
+                //        objForm.ListForm.FormMode = mFormMode;
+                //        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+                //        {
+                //            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+                //            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+                //        }
+                //        DetailsResult = objForm.ShowDialog();
+                //        objForm.Dispose();
+                //        break;
+                //    }
                 case ListFormCaller.LFC_OPERATRIONSTITLES:
                     {
                         var objForm = new frmOperationTitle();
@@ -1426,31 +1426,31 @@ namespace ProductionPlanning
 
                 switch (this.CallerForm )
                 {
-                    case ListFormCaller.LFC_TOOLTYPES:
-                        {
-                            withBlock.Columns["ID"].Visible = false;
-                            withBlock.Columns["TypeName"].HeaderText = "نوع قالب/ابزار";
-                            break;
-                        }
+                    //case ListFormCaller.LFC_TOOLTYPES:
+                    //    {
+                    //        withBlock.Columns["ID"].Visible = false;
+                    //        withBlock.Columns["TypeName"].HeaderText = "نوع قالب/ابزار";
+                    //        break;
+                    //    }
 
-                    case ListFormCaller.LFC_TOOLS:
-                        {
-                            withBlock.Columns["ID"].Visible = false;
-                            withBlock.Columns["ToolCode"].HeaderText = "کد ابزار";
-                            withBlock.Columns["ToolName"].HeaderText = "نام ابزار";
-                            withBlock.Columns["ToolTypeID"].Visible = false;
-                            withBlock.Columns["TypeName"].HeaderText = "نوع ابزار";
-                            withBlock.Columns["TechnicalSpecs"].HeaderText = "مشخصات فنی";
-                            withBlock.Columns["CurrentQuantity"].HeaderText = "موجودی فعلی";
-                            withBlock.Columns["MinStockLevel"].HeaderText = "حداقل موجودی";
-                            withBlock.Columns["ToolLocation"].HeaderText = "محل ذخیره";
-                            withBlock.Columns["MaintenanceCycle"].HeaderText = "دوره تعمیر و نگهداری";
-                            withBlock.Columns["CreatedAt"].Visible = false;
-                            withBlock.Columns["ModifiedAt"].Visible = false;
-                            withBlock.Columns["IsDeleted"].Visible = false;
+                    //case ListFormCaller.LFC_TOOLS:
+                    //    {
+                    //        withBlock.Columns["ID"].Visible = false;
+                    //        withBlock.Columns["ToolCode"].HeaderText = "کد ابزار";
+                    //        withBlock.Columns["ToolName"].HeaderText = "نام ابزار";
+                    //        withBlock.Columns["ToolTypeID"].Visible = false;
+                    //        withBlock.Columns["TypeName"].HeaderText = "نوع ابزار";
+                    //        withBlock.Columns["TechnicalSpecs"].HeaderText = "مشخصات فنی";
+                    //        withBlock.Columns["CurrentQuantity"].HeaderText = "موجودی فعلی";
+                    //        withBlock.Columns["MinStockLevel"].HeaderText = "حداقل موجودی";
+                    //        withBlock.Columns["ToolLocation"].HeaderText = "محل ذخیره";
+                    //        withBlock.Columns["MaintenanceCycle"].HeaderText = "دوره تعمیر و نگهداری";
+                    //        withBlock.Columns["CreatedAt"].Visible = false;
+                    //        withBlock.Columns["ModifiedAt"].Visible = false;
+                    //        withBlock.Columns["IsDeleted"].Visible = false;
 
-                            break;
-                        }
+                    //        break;
+                    //    }
                     case ListFormCaller.LFC_OPERATRIONSTITLES:
                         {
                             withBlock.Columns[0].Visible = false;
@@ -1713,17 +1713,17 @@ namespace ProductionPlanning
             DataRow crRow;
             switch (this.CallerForm )
             {
-                case ListFormCaller.LFC_TOOLTYPES:
-                    {
-                        FindValue = "ID = " + dgList.CurrentRow.Cells["ID"].Value;
-                        break;
-                    }
+                //case ListFormCaller.LFC_TOOLTYPES:
+                //    {
+                //        FindValue = "ID = " + dgList.CurrentRow.Cells["ID"].Value;
+                //        break;
+                //    }
 
-                case ListFormCaller.LFC_TOOLS:
-                    {
-                        FindValue = "ID = " + dgList.CurrentRow.Cells["ID"].Value;
-                        break;
-                    }
+                //case ListFormCaller.LFC_TOOLS:
+                //    {
+                //        FindValue = "ID = " + dgList.CurrentRow.Cells["ID"].Value;
+                //        break;
+                //    }
                 case ListFormCaller.LFC_OPERATRIONSTITLES:
                 case ListFormCaller.LFC_TESTUNITS:
                 case ListFormCaller.LFC_MACHINES:

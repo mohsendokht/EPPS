@@ -15,8 +15,8 @@ namespace ProductionPlanning
             LFC_PRODUCTIONPARTS,
             LFC_TESTUNITS,
             LFC_UNITSRELATIONS,
-            LFC_TOOLS, // فرم قالب ها و ابزار آلات
-            LFC_TOOLTYPES,       // فرم انواع قالب و ابزارالات
+          //  LFC_TOOLS, // فرم قالب ها و ابزار آلات
+          //  LFC_TOOLTYPES,       // فرم انواع قالب و ابزارالات
             LFC_PRIMARYMATERIALS,
             LFC_MACHINES,
             LFC_CONTRACTORS,

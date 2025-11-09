@@ -194,11 +194,11 @@ namespace ProductionPlanning
         }
         private void MOLDS_AND_TOOLS_Click(object sender, EventArgs e)
         {
-            LoadListForm(ListFormCaller.LFC_TOOLS, "قالب ها و ابزار آلات");
+           // LoadListForm(ListFormCaller.LFC_TOOLS, "قالب ها و ابزار آلات");
         }
         private void TOOLTYPES_Click(object sender, EventArgs e)
         {
-            LoadListForm(ListFormCaller.LFC_TOOLTYPES, "انواع قالب ها و ابزار آلات");
+          //  LoadListForm(ListFormCaller.LFC_TOOLTYPES, "انواع قالب ها و ابزار آلات");
 
         }
 
