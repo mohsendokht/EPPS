@@ -70,8 +70,10 @@ namespace ProductionPlanning
             this.MenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this._MenuItem3_1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
-            this._MenuItem3_2 = new System.Windows.Forms.ToolStripMenuItem();
+            this._MenuItem3_8 = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this._MenuItem3_2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this._MenuItem3_3 = new System.Windows.Forms.ToolStripMenuItem();
             this._MenuItem3_4 = new System.Windows.Forms.ToolStripMenuItem();
             this._MenuItem3_5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -389,8 +391,10 @@ namespace ProductionPlanning
             this.MenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._MenuItem3_1,
             this.ToolStripMenuItem9,
-            this._MenuItem3_2,
+            this._MenuItem3_8,
             this.ToolStripMenuItem1,
+            this._MenuItem3_2,
+            this.toolStripSeparator2,
             this._MenuItem3_3,
             this._MenuItem3_4,
             this._MenuItem3_5,
@@ -413,6 +417,18 @@ namespace ProductionPlanning
             this.ToolStripMenuItem9.Name = "ToolStripMenuItem9";
             this.ToolStripMenuItem9.Size = new System.Drawing.Size(425, 6);
             // 
+            // _MenuItem3_8
+            // 
+            this._MenuItem3_8.Name = "_MenuItem3_8";
+            this._MenuItem3_8.Size = new System.Drawing.Size(428, 26);
+            this._MenuItem3_8.Text = "برنامه روز";
+            this._MenuItem3_8.Click += new System.EventHandler(this._MenuItem3_8_Click);
+            // 
+            // ToolStripMenuItem1
+            // 
+            this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
+            this.ToolStripMenuItem1.Size = new System.Drawing.Size(425, 6);
+            // 
             // _MenuItem3_2
             // 
             this._MenuItem3_2.Name = "_MenuItem3_2";
@@ -420,10 +436,10 @@ namespace ProductionPlanning
             this._MenuItem3_2.Text = "لیست بچ تولید";
             this._MenuItem3_2.Click += new System.EventHandler(this.MenuItem3_2_Click);
             // 
-            // ToolStripMenuItem1
+            // toolStripSeparator2
             // 
-            this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-            this.ToolStripMenuItem1.Size = new System.Drawing.Size(425, 6);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(425, 6);
             // 
             // _MenuItem3_3
             // 
@@ -1871,6 +1887,8 @@ namespace ProductionPlanning
         private ToolStripMenuItem _MenuItem3_6;
         private ToolStripMenuItem MOLDS_AND_TOOLS;
         private ToolStripMenuItem TOOLTYPES;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem _MenuItem3_8;
 
         internal ToolStripMenuItem MenuItem1_15
         {

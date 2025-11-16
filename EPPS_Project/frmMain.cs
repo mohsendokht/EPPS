@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
+using ProductionPlanning.DBChange;
+using ProductionPlanning.Planning_Forms;
+using ProductionPlanning.Planning_Forms.OperatorTasks;
+using ProductionPlanning.ToolForms;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,11 +14,6 @@ using System.IO;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
-using ProductionPlanning.DBChange;
-using ProductionPlanning.Planning_Forms.OperatorTasks;
-using ProductionPlanning.ToolForms;
 using static ProductionPlanning.MyEnums;
 
 namespace ProductionPlanning
@@ -323,6 +324,36 @@ namespace ProductionPlanning
                 withBlock.Show();
             }
             // LoadListForm(ListFormCaller.LFC_BATCHSPRODUCTIONPROGRESS, " نمایش پیشرفت تولید بچ")
+        }
+
+        private void MenuItem3_7_Click1(object sender, EventArgs e)
+        {
+            {
+                var withBlock = new frmBatchsStatus();
+                withBlock.MdiParent = this;
+                withBlock.Show();
+            }
+            // LoadListForm(ListFormCaller.LFC_BATCHSPRODUCTIONPROGRESS, " نمایش پیشرفت تولید بچ")
+        }
+
+        private void _MenuItem3_8_Click(object sender, EventArgs e)
+        {
+            // If already opened, activate and return
+            foreach (Form child in MdiChildren)
+            {
+                if (child is frmDailyPlan existing)
+                {
+                    existing.Activate();
+                    return;
+                }
+            }
+
+            // Create and show new MDI child
+            var dailyPlan = new frmDailyPlan
+            {
+                MdiParent = this
+            };
+            dailyPlan.Show();
         }
 
         private void MenuItem5_1_Click(object sender, EventArgs e)
@@ -706,6 +737,10 @@ namespace ProductionPlanning
             frm.MdiParent = this;
             frm.Show();
         }
+
+       
+
+
 
 
 
