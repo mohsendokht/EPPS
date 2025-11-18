@@ -277,6 +277,76 @@ namespace ProductionPlanning
                     Module1.cnProductionPlanning.Close();
             }
         }
+        private void SaveAllChanges2()
+        {
+            try
+            {
+                if (!isDataLoaded) return;
+
+                // اطمینان از پایان ویرایش
+                dgvTools.EndEdit();
+
+                // بررسی تغییرات
+                if (dsLocal.HasChanges())
+                {
+                    // برای رکوردهای جدید، تنظیم مقادیر پیش‌فرض
+                    foreach (DataRow row in dsLocal.Tables["Tbl_Tools"].Rows)
+                    {
+                        if (row.RowState == DataRowState.Added)
+                        {
+                            if (row["ToolCode"] == DBNull.Value || string.IsNullOrEmpty(row["ToolCode"].ToString()))
+                                row["ToolCode"] = "TOOL_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+
+                            // مقدار پیش‌فرض برای ToolTypeID اگر خالی است
+                            if (row["ToolTypeID"] == DBNull.Value && dsToolTypes.Tables["Tbl_ToolType"].Rows.Count > 0)
+                                row["ToolTypeID"] = dsToolTypes.Tables["Tbl_ToolType"].Rows[0]["ID"];
+
+                            if (row["CreatedAt"] == DBNull.Value)
+                                row["CreatedAt"] = DateTime.Now;
+
+                            row["ModifiedAt"] = DateTime.Now;
+
+                            // ID نباید تنظیم شود چون Identity است
+                            if (row["ID"] == DBNull.Value)
+                                row["ID"] = DBNull.Value; // اطمینان از خالی بودن
+                        }
+                        else if (row.RowState == DataRowState.Modified)
+                        {
+                            row["ModifiedAt"] = DateTime.Now;
+                        }
+                    }
+
+                    // تست اتصال
+                    if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
+                        Module1.cnProductionPlanning.Open();
+
+                    // ذخیره در دیتابیس
+                    int affectedRows = daTools.Update(dsLocal, "Tbl_Tools");
+
+                    if (affectedRows > 0)
+                    {
+                        // رفرش داده‌ها برای گرفتن IDهای تولید شده
+                        dsLocal.Tables["Tbl_Tools"].Clear();
+                        daTools.Fill(dsLocal, "Tbl_Tools");
+
+                        MessageBox.Show("تغییرات با موفقیت ذخیره شد", "پیام",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                dsLocal.RejectChanges();
+                MessageBox.Show($"خطا در ذخیره تغییرات: {ex.Message}", "خطا",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+                    Module1.cnProductionPlanning.Close();
+            }
+        }
 
         /// <summary>
         /// رکورد انتخاب شده را از گرید حذف می‌کند
@@ -413,7 +483,7 @@ namespace ProductionPlanning
         }
         private void dgvTools_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
-
+       //     SaveAllChanges2();
         }
 
         /// <summary>
@@ -426,5 +496,7 @@ namespace ProductionPlanning
                 btnSearch_Click(sender, e);
             }
         }
+
+
     }
 }

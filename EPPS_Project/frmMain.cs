@@ -201,7 +201,7 @@ namespace ProductionPlanning
         private void TOOLTYPES_Click(object sender, EventArgs e)
         {
             //  LoadListForm(ListFormCaller.LFC_TOOLTYPES, "انواع قالب ها و ابزار آلات");
-            frmToolTypeLists frm_tooltype = new frmToolTypeLists();
+            frmToolTypeLists_V3 frm_tooltype = new frmToolTypeLists_V3();
             frm_tooltype.ShowDialog();
 
         }

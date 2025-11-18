@@ -224,6 +224,12 @@
     <Compile Include="Forms\Primary Definitions\frmToolTypeLists.designer.cs">
       <DependentUpon>frmToolTypeLists.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Primary Definitions\frmToolTypeLists_V3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Primary Definitions\frmToolTypeLists_V3.designer.cs">
+      <DependentUpon>frmToolTypeLists_V3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\DBChange.cs" />
     <Compile Include="Interfaces\IEPPSForm.cs" />
     <Compile Include="Model\CalendarDayWorkingTime.cs" />
@@ -743,6 +749,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Primary Definitions\frmToolTypeLists.resx">
       <DependentUpon>frmToolTypeLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Primary Definitions\frmToolTypeLists_V3.resx">
+      <DependentUpon>frmToolTypeLists_V3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ToolForms\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
