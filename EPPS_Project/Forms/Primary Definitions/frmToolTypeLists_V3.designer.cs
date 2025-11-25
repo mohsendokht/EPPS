@@ -157,6 +157,9 @@
             this.dgvToolTypes.RowTemplate.Height = 24;
             this.dgvToolTypes.Size = new System.Drawing.Size(833, 266);
             this.dgvToolTypes.TabIndex = 0;
+            this.dgvToolTypes.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvToolTypes_CellBeginEdit);
+            this.dgvToolTypes.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvToolTypes_CellEndEdit);
+            this.dgvToolTypes.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvToolTypes_RowLeave);
             // 
             // ID
             // 

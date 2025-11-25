@@ -59,10 +59,10 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 412);
+            this.panel1.Location = new System.Drawing.Point(0, 452);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(800, 38);
+            this.panel1.Size = new System.Drawing.Size(1077, 38);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -87,8 +87,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgvTools);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.splitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer1.Size = new System.Drawing.Size(800, 412);
-            this.splitContainer1.SplitterDistance = 80;
+            this.splitContainer1.Size = new System.Drawing.Size(1077, 452);
+            this.splitContainer1.SplitterDistance = 87;
             this.splitContainer1.TabIndex = 1;
             // 
             // lblSearch
@@ -175,9 +175,12 @@
             this.dgvTools.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvTools.RowHeadersWidth = 51;
             this.dgvTools.RowTemplate.Height = 24;
-            this.dgvTools.Size = new System.Drawing.Size(800, 328);
+            this.dgvTools.Size = new System.Drawing.Size(1077, 361);
             this.dgvTools.TabIndex = 0;
+            this.dgvTools.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvTools_CellBeginEdit);
+            this.dgvTools.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTools_CellEndEdit);
             this.dgvTools.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvTools_DefaultValuesNeeded);
+            this.dgvTools.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTools_RowLeave);
             this.dgvTools.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTools_RowValidated);
             this.dgvTools.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvTools_UserDeletingRow);
             // 
@@ -285,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1077, 490);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Name = "frmToolsLists_v3";

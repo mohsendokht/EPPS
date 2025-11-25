@@ -17,6 +17,9 @@ namespace ProductionPlanning
         private DataSet dsLocal;
         private DataSet dsToolTypes;
         private bool isDataLoaded = false;
+        bool rowModified = false;
+        int editingRowIndex = -1;
+        object oldValue = null;
 
         public frmToolsLists_v3()
         {
@@ -277,15 +280,18 @@ namespace ProductionPlanning
                     Module1.cnProductionPlanning.Close();
             }
         }
+
         private void SaveAllChanges2()
         {
             try
             {
                 if (!isDataLoaded) return;
 
-                // اطمینان از پایان ویرایش
-                dgvTools.EndEdit();
-
+                this.Validate();                  // اعتبارسنجی کنترل‌ها
+                dgvTools.EndEdit();               // خروج از حالت ادیت سلول
+                CurrencyManager cm =
+                    (CurrencyManager)this.BindingContext[dgvTools.DataSource];
+                cm.EndCurrentEdit();
                 // بررسی تغییرات
                 if (dsLocal.HasChanges())
                 {
@@ -333,7 +339,11 @@ namespace ProductionPlanning
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("هیچ تغییری برای ذخیره وجود ندارد", "اطلاع",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -494,6 +504,43 @@ namespace ProductionPlanning
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnSearch_Click(sender, e);
+            }
+        }
+
+        private void dgvTools_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            editingRowIndex = e.RowIndex;
+            rowModified = false;   // از نو شروع کن
+            oldValue = dgvTools[e.ColumnIndex, e.RowIndex].Value;
+        }
+
+        private void dgvTools_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var newValue = dgvTools[e.ColumnIndex, e.RowIndex].Value;
+            if (e.RowIndex == editingRowIndex && !Equals(oldValue, newValue))
+            {
+                rowModified = true;
+            }
+        }
+
+        private void dgvTools_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!isDataLoaded) return;
+
+            // ۱) اول ادیت سلول رو ببند
+            dgvTools.EndEdit();
+
+            // ۲) بعد کامیت روی DataRow
+            CurrencyManager cm =
+                (CurrencyManager)this.BindingContext[dgvTools.DataSource];
+            cm.EndCurrentEdit();
+
+            // ۳) حالا با خیال راحت چک کن آیا این سطر واقعاً تغییر کرده
+            if (rowModified && e.RowIndex == editingRowIndex)
+            {
+                rowModified = false;
+                editingRowIndex = -1;
+                SaveAllChanges2();
             }
         }
 

@@ -11,6 +11,9 @@ namespace ProductionPlanning
         private SqlDataAdapter daToolTypes;
         private DataSet dsLocal;
         private bool isDataLoaded = false;
+        bool rowModified = false;
+        int editingRowIndex = -1;
+        object oldValue = null;
 
         public frmToolTypeLists_V3()
         {
@@ -103,6 +106,69 @@ namespace ProductionPlanning
                 if (!isDataLoaded) return;
 
                 dgvToolTypes.EndEdit();
+
+                if (dsLocal == null || !dsLocal.HasChanges())
+                {
+                    MessageBox.Show("هیچ تغییری برای ذخیره وجود ندارد", "اطلاع",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // تنظیم مقادیر پیش‌فرض برای رکوردهای جدید (در این جدول فقط TypeName مهم است)
+                foreach (DataRow row in dsLocal.Tables["Tbl_ToolType"].Rows)
+                {
+                    if (row.RowState == DataRowState.Added)
+                    {
+                        if (row["TypeName"] == DBNull.Value || string.IsNullOrEmpty(row["TypeName"].ToString()))
+                        {
+                            row["TypeName"] = "نوع ابزار";
+                        }
+                    }
+                }
+
+                if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
+                    Module1.cnProductionPlanning.Open();
+
+                int affectedRows = daToolTypes.Update(dsLocal, "Tbl_ToolType");
+
+                if (affectedRows > 0)
+                {
+                    // رفرش داده‌ها برای هماهنگ‌سازی ID های ایجادشده و وضعیت دیتاست
+                    dsLocal.Tables["Tbl_ToolType"].Clear();
+                    daToolTypes.Fill(dsLocal, "Tbl_ToolType");
+
+                    MessageBox.Show("تغییرات با موفقیت ذخیره شد", "پیام",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("هیچ رکوردی تغییر نکرد یا خطایی رخ داده است", "اطلاع",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (dsLocal != null) dsLocal.RejectChanges();
+                MessageBox.Show($"خطا در ذخیره تغییرات: {ex.Message}", "خطا",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+                    Module1.cnProductionPlanning.Close();
+            }
+        }
+        private void SaveAllChanges2()
+        {
+            try
+            {
+                if (!isDataLoaded) return;
+
+                this.Validate();                  // اعتبارسنجی کنترل‌ها
+                dgvToolTypes.EndEdit();               // خروج از حالت ادیت سلول
+                CurrencyManager cm =
+                    (CurrencyManager)this.BindingContext[dgvToolTypes.DataSource];
+                cm.EndCurrentEdit();
 
                 if (dsLocal == null || !dsLocal.HasChanges())
                 {
@@ -284,6 +350,43 @@ namespace ProductionPlanning
             catch
             {
                 // اگر تابع یا ثابت وجود ندارد، نادیده بگیرید
+            }
+        }
+
+        private void dgvToolTypes_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            editingRowIndex = e.RowIndex;
+            rowModified = false;   // از نو شروع کن
+            oldValue = dgvToolTypes[e.ColumnIndex, e.RowIndex].Value;
+        }
+
+        private void dgvToolTypes_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var newValue = dgvToolTypes[e.ColumnIndex, e.RowIndex].Value;
+            if (e.RowIndex == editingRowIndex && !Equals(oldValue, newValue))
+            {
+                rowModified = true;
+            }
+        }
+
+        private void dgvToolTypes_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!isDataLoaded) return;
+
+            // ۱) اول ادیت سلول رو ببند
+            dgvToolTypes.EndEdit();
+
+            // ۲) بعد کامیت روی DataRow
+            CurrencyManager cm =
+                (CurrencyManager)this.BindingContext[dgvToolTypes.DataSource];
+            cm.EndCurrentEdit();
+
+            // ۳) حالا با خیال راحت چک کن آیا این سطر واقعاً تغییر کرده
+            if (rowModified && e.RowIndex == editingRowIndex)
+            {
+                rowModified = false;
+                editingRowIndex = -1;
+                SaveAllChanges2();
             }
         }
     }
