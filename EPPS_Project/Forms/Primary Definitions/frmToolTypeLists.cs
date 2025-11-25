@@ -8,9 +8,9 @@ using static ProductionPlanning.MyEnums;
 
 namespace ProductionPlanning
 {
-    public partial class frmRecordsLists
+    public partial class frmToolTypeLists
     {
-        public frmRecordsLists()
+        public frmToolTypeLists()
         {
             InitializeComponent();
             _cbFilter8.Name = "cbFilter8";
@@ -447,8 +447,8 @@ namespace ProductionPlanning
             //var objForm = new frmOperationUnit() ;
             
             ForeignKeyConstraint fkColumn;
-            switch (this.CallerForm)
-            {
+            //switch (this.CallerForm)
+            //{
                 //case ListFormCaller.LFC_TOOLTYPES:
                 //    {
                 //        var objForm = new frmToolType();
@@ -494,518 +494,518 @@ namespace ProductionPlanning
                 //        objForm.Dispose();
                 //        break;
                 //    }
-                case ListFormCaller.LFC_OPERATRIONSTITLES:
-                    {
-                        var objForm = new frmOperationTitle();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_OPERATRIONSTITLES:
+            //        {
+            //            var objForm = new frmOperationTitle();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_PRODUCTIONPARTS:
-                    {
-                        DataSetConfig.FillDataSet("Tbl_Calendar", "Tbl_Calendar", "Select * From Tbl_Calendar Order By CalendarTitle", "CalendarCode");
-                        var objForm = new frmNature();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_PRODUCTIONPARTS:
+            //        {
+            //            DataSetConfig.FillDataSet("Tbl_Calendar", "Tbl_Calendar", "Select * From Tbl_Calendar Order By CalendarTitle", "CalendarCode");
+            //            var objForm = new frmNature();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_SUPPLIERS:
-                    {
-                        var objForm = new frmSupplier();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_SUPPLIERS:
+            //        {
+            //            var objForm = new frmSupplier();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_TESTUNITS:
-                    {
-                        var objForm = new frmTestUnit();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_TESTUNITS:
+            //        {
+            //            var objForm = new frmTestUnit();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_UNITSRELATIONS:
-                    {
-                        DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_TestUnits_Base", "Select * From Tbl_TestUnits Order By Title", "Code");
-                        DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_TestUnits_Related", "Select * From Tbl_TestUnits Order By Title", "Code");
-                        var objForm = new frmUnitsRelation();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_UNITSRELATIONS:
+            //        {
+            //            DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_TestUnits_Base", "Select * From Tbl_TestUnits Order By Title", "Code");
+            //            DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_TestUnits_Related", "Select * From Tbl_TestUnits Order By Title", "Code");
+            //            var objForm = new frmUnitsRelation();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_PRIMARYMATERIALS:
-                    {
-                        DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_StoreTestUnits", "Select * From Tbl_TestUnits Order By Title", "Code");
-                        DataSetConfig.FillDataSet("Tbl_Stores", "Tbl_Stores", "Select * From Tbl_Stores Order By StoreName", "StoreCode");
+            //    case ListFormCaller.LFC_PRIMARYMATERIALS:
+            //        {
+            //            DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_StoreTestUnits", "Select * From Tbl_TestUnits Order By Title", "Code");
+            //            DataSetConfig.FillDataSet("Tbl_Stores", "Tbl_Stores", "Select * From Tbl_Stores Order By StoreName", "StoreCode");
 
-                        // تنظیم محدودیت کلید خارجی برای جدول مواد اولیه و جدول واحدهای سنجش
-                        fkColumn = new ForeignKeyConstraint("fkColumn__TestUnits_v_PrimaryMaterials", dsProductionPlanning.Tables["Tbl_StoreTestUnits"].Columns["Code"], dsProductionPlanning.Tables["Tbl_PrimaryMaterials"].Columns["StoreUnit"]);
-                        fkColumn.AcceptRejectRule = AcceptRejectRule.None;
-                        fkColumn.DeleteRule = Rule.None;
-                        fkColumn.UpdateRule = Rule.Cascade;
-                        dsProductionPlanning.Tables["Tbl_PrimaryMaterials"].Constraints.Add(fkColumn);
+            //            // تنظیم محدودیت کلید خارجی برای جدول مواد اولیه و جدول واحدهای سنجش
+            //            fkColumn = new ForeignKeyConstraint("fkColumn__TestUnits_v_PrimaryMaterials", dsProductionPlanning.Tables["Tbl_StoreTestUnits"].Columns["Code"], dsProductionPlanning.Tables["Tbl_PrimaryMaterials"].Columns["StoreUnit"]);
+            //            fkColumn.AcceptRejectRule = AcceptRejectRule.None;
+            //            fkColumn.DeleteRule = Rule.None;
+            //            fkColumn.UpdateRule = Rule.Cascade;
+            //            dsProductionPlanning.Tables["Tbl_PrimaryMaterials"].Constraints.Add(fkColumn);
 
-                        // تنظیم رابطه بین جدول مواد اولیه و جدول واحدهای سنجش بوسیله ستون کد واحد سنجش
-                        dsProductionPlanning.Relations.Add("StoreTestUnits_PrimaryMaterials", dsProductionPlanning.Tables["Tbl_StoreTestUnits"].Columns["Code"], dsProductionPlanning.Tables["Tbl_PrimaryMaterials"].Columns["StoreUnit"]);
-                        var objForm = new frmPrimaryMaterial();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //            // تنظیم رابطه بین جدول مواد اولیه و جدول واحدهای سنجش بوسیله ستون کد واحد سنجش
+            //            dsProductionPlanning.Relations.Add("StoreTestUnits_PrimaryMaterials", dsProductionPlanning.Tables["Tbl_StoreTestUnits"].Columns["Code"], dsProductionPlanning.Tables["Tbl_PrimaryMaterials"].Columns["StoreUnit"]);
+            //            var objForm = new frmPrimaryMaterial();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_MACHINES:
-                    {
-                        DataSetConfig.FillDataSet("Tbl_Calendar", "Tbl_Calendar", "Select * From Tbl_Calendar Order By CalendarTitle", "CalendarCode");
+            //    case ListFormCaller.LFC_MACHINES:
+            //        {
+            //            DataSetConfig.FillDataSet("Tbl_Calendar", "Tbl_Calendar", "Select * From Tbl_Calendar Order By CalendarTitle", "CalendarCode");
 
-                        // تنظیم محدودیت کلید خارجی برای جدول تقویمهای کاری و جدول ماشین آلات
-                        fkColumn = new ForeignKeyConstraint("fkColumn__Calendar_v_Machines", dsProductionPlanning.Tables["Tbl_Calendar"].Columns["CalendarCode"], dsProductionPlanning.Tables["Tbl_Machines"].Columns["CalendarCode"]);
-                        fkColumn.AcceptRejectRule = AcceptRejectRule.None;
-                        fkColumn.DeleteRule = Rule.None;
-                        fkColumn.UpdateRule = Rule.Cascade;
-                        dsProductionPlanning.Tables["Tbl_Machines"].Constraints.Add(fkColumn);
+            //            // تنظیم محدودیت کلید خارجی برای جدول تقویمهای کاری و جدول ماشین آلات
+            //            fkColumn = new ForeignKeyConstraint("fkColumn__Calendar_v_Machines", dsProductionPlanning.Tables["Tbl_Calendar"].Columns["CalendarCode"], dsProductionPlanning.Tables["Tbl_Machines"].Columns["CalendarCode"]);
+            //            fkColumn.AcceptRejectRule = AcceptRejectRule.None;
+            //            fkColumn.DeleteRule = Rule.None;
+            //            fkColumn.UpdateRule = Rule.Cascade;
+            //            dsProductionPlanning.Tables["Tbl_Machines"].Constraints.Add(fkColumn);
 
-                        // تنظیم رابطه بین جدول جدول ماشین آلات جایگزین و جدول ماشین آلات بوسیله ستون کد ماشین
-                        dsProductionPlanning.Relations.Add("Calendar_Machines", dsProductionPlanning.Tables["Tbl_Calendar"].Columns["CalendarCode"], dsProductionPlanning.Tables["Tbl_Machines"].Columns["CalendarCode"]);
-                        var objForm = new frmMachine();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //            // تنظیم رابطه بین جدول جدول ماشین آلات جایگزین و جدول ماشین آلات بوسیله ستون کد ماشین
+            //            dsProductionPlanning.Relations.Add("Calendar_Machines", dsProductionPlanning.Tables["Tbl_Calendar"].Columns["CalendarCode"], dsProductionPlanning.Tables["Tbl_Machines"].Columns["CalendarCode"]);
+            //            var objForm = new frmMachine();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_MACHINENOTAVAILABLEREASON:
-                    {
-                        var objForm = new frmMachineNotAvailableReason();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_MACHINENOTAVAILABLEREASON:
+            //        {
+            //            var objForm = new frmMachineNotAvailableReason();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_CONTRACTORS:
-                    {
-                        var objForm = new frmContractor();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_CONTRACTORS:
+            //        {
+            //            var objForm = new frmContractor();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_STORES:
-                    {
-                        var objForm = new frmStore();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_STORES:
+            //        {
+            //            var objForm = new frmStore();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_HOLIDAYS:
-                    {
-                        var objForm = new frmHoliday();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_HOLIDAYS:
+            //        {
+            //            var objForm = new frmHoliday();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_ACTINGCALENDARS:
-                    {
-                        string mCalendarCode;
-                        if (mFormMode != (int)Module1.FormModeEnum.INSERT_MODE)
-                        {
-                            mCalendarCode = dgList.SelectedRows[0].Cells["CalendarCode"].Value.ToString();
-                        }
-                        else
-                        {
-                            mCalendarCode = "-1";
-                        }
+            //    case ListFormCaller.LFC_ACTINGCALENDARS:
+            //        {
+            //            string mCalendarCode;
+            //            if (mFormMode != (int)Module1.FormModeEnum.INSERT_MODE)
+            //            {
+            //                mCalendarCode = dgList.SelectedRows[0].Cells["CalendarCode"].Value.ToString();
+            //            }
+            //            else
+            //            {
+            //                mCalendarCode = "-1";
+            //            }
 
-                        DataSetConfig.FillDataSet("Tbl_CalendarShifts", "Tbl_CalendarShifts", "Select * From Tbl_CalendarShifts Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo");
-                        DataSetConfig.FillDataSet("Tbl_CalendarDays", "Tbl_CalendarDays", "Select * From Tbl_CalendarDays Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo", "DayNo");
-                        DataSetConfig.FillDataSet("Tbl_CalendarParticularShifts", "Tbl_CalendarParticularShifts", "Select * From Tbl_CalendarParticularShifts Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShamsiDate", "ShiftNo");
-                        DataSetConfig.FillDataSet("Tbl_CalendarParticularDays", "Tbl_CalendarParticularDays", "Select * From Tbl_CalendarParticularDays Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShamsiDate");
-                        DataSetConfig.FillDataSet("Tbl_HoliDays", "Tbl_HoliDays", "Select * From Tbl_HoliDays", "DayNo", "MonthNo");
-                        DataSetConfig.FillDataSet("Tbl_CalendarShiftDownTimes", "Tbl_CalendarShiftDownTimes", "Select * From Tbl_CalendarShiftDownTimes Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo", "DownTimeStart");
-                        DataSetConfig.FillDataSet("Tbl_CalendarDaysDownTimes", "Tbl_CalendarDaysDownTimes", "Select * From Tbl_CalendarDaysDownTimes Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo", "DayNo", "DownTimeStart");
-                        DataSetConfig.FillDataSet("Tbl_ParticularShiftDownTimes", "Tbl_ParticularShiftDownTimes", "Select * From Tbl_ParticularShiftDownTimes Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShamsiDate", "ShiftNo", "DownTimeStart");
-                        var objForm = new frmCalendar();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //            DataSetConfig.FillDataSet("Tbl_CalendarShifts", "Tbl_CalendarShifts", "Select * From Tbl_CalendarShifts Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo");
+            //            DataSetConfig.FillDataSet("Tbl_CalendarDays", "Tbl_CalendarDays", "Select * From Tbl_CalendarDays Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo", "DayNo");
+            //            DataSetConfig.FillDataSet("Tbl_CalendarParticularShifts", "Tbl_CalendarParticularShifts", "Select * From Tbl_CalendarParticularShifts Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShamsiDate", "ShiftNo");
+            //            DataSetConfig.FillDataSet("Tbl_CalendarParticularDays", "Tbl_CalendarParticularDays", "Select * From Tbl_CalendarParticularDays Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShamsiDate");
+            //            DataSetConfig.FillDataSet("Tbl_HoliDays", "Tbl_HoliDays", "Select * From Tbl_HoliDays", "DayNo", "MonthNo");
+            //            DataSetConfig.FillDataSet("Tbl_CalendarShiftDownTimes", "Tbl_CalendarShiftDownTimes", "Select * From Tbl_CalendarShiftDownTimes Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo", "DownTimeStart");
+            //            DataSetConfig.FillDataSet("Tbl_CalendarDaysDownTimes", "Tbl_CalendarDaysDownTimes", "Select * From Tbl_CalendarDaysDownTimes Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShiftNo", "DayNo", "DownTimeStart");
+            //            DataSetConfig.FillDataSet("Tbl_ParticularShiftDownTimes", "Tbl_ParticularShiftDownTimes", "Select * From Tbl_ParticularShiftDownTimes Where CalendarCode = " + mCalendarCode, "CalendarCode", "ShamsiDate", "ShiftNo", "DownTimeStart");
+            //            var objForm = new frmCalendar();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_PRODUCTS:
-                    {
-                        var objForm = new frmProduct();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_PRODUCTS:
+            //        {
+            //            var objForm = new frmProduct();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_PRODUCTIONBATCHS:
-                    {
-                        short EditMode = -1;
-                        if (mFormMode == (int)Module1.FormModeEnum.EDIT_MODE)
-                        {
-                            var cmEditRight = new System.Data.SqlClient.SqlCommand(Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select Count(*) From Tbl_ProductionSubbatchs Where PlanningStartDate>0 And BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "'")), Module1.cnProductionPlanning);
-                            if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
-                                Module1.cnProductionPlanning.Open();
-                            if (Conversions.ToBoolean(Operators.ConditionalCompareObjectEqual(cmEditRight.ExecuteScalar(), 0, false)))
-                            {
-                                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
-                                    Module1.cnProductionPlanning.Close();
-                                cmEditRight.Dispose();
-                                EditMode = 1; // هیچ ساب بچی برنامه ریزی نشده است
-                                goto FillDataSet;
-                            }
+            //    case ListFormCaller.LFC_PRODUCTIONBATCHS:
+            //        {
+            //            short EditMode = -1;
+            //            if (mFormMode == (int)Module1.FormModeEnum.EDIT_MODE)
+            //            {
+            //                var cmEditRight = new System.Data.SqlClient.SqlCommand(Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select Count(*) From Tbl_ProductionSubbatchs Where PlanningStartDate>0 And BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "'")), Module1.cnProductionPlanning);
+            //                if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
+            //                    Module1.cnProductionPlanning.Open();
+            //                if (Conversions.ToBoolean(Operators.ConditionalCompareObjectEqual(cmEditRight.ExecuteScalar(), 0, false)))
+            //                {
+            //                    if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+            //                        Module1.cnProductionPlanning.Close();
+            //                    cmEditRight.Dispose();
+            //                    EditMode = 1; // هیچ ساب بچی برنامه ریزی نشده است
+            //                    goto FillDataSet;
+            //                }
 
-                            if (Module1.cnProductionPlanning.State == ConnectionState.Open)
-                                Module1.cnProductionPlanning.Close();
+            //                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+            //                    Module1.cnProductionPlanning.Close();
 
-                            // کنترل اینکه آیا تمامی ساب بچها وارد مرحله تولید شده اند یا نه
-                            cmEditRight.CommandText = Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select Count(*) From Tbl_ProductionSubbatchs Where BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "' And (NOT (SubbatchCode IN(SELECT SubbatchCode FROM Tbl_RealProduction)))"));
-                            if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
-                                Module1.cnProductionPlanning.Open();
-                            if (Conversions.ToBoolean(Operators.ConditionalCompareObjectEqual(cmEditRight.ExecuteScalar(), 0, false)))
-                            {
-                                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
-                                    Module1.cnProductionPlanning.Close();
-                                cmEditRight.Dispose();
-                                MessageBox.Show("بچ انتخاب شده مجاز به تغییر اطلاعات نمی باشد" + Constants.vbCrLf + "تمامی ساب بچ ها وارد مرحله تولید شده اند", Module1.MessagesTitle, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading, false);
-                                return;
-                            }
-                            else
-                            {
-                                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
-                                    Module1.cnProductionPlanning.Close();
-                                cmEditRight.Dispose();
-                                EditMode = 2; // برخی از ساب بچ ها وارد مرحله تولید شده اند
-                                goto FillDataSet;
-                            }
-                        }
-                        else if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            var cmDeleteRight = new System.Data.SqlClient.SqlCommand(Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select Count(*) From Tbl_ProductionSubbatchs Where BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "' And (SubbatchCode IN(SELECT SubbatchCode FROM Tbl_RealProduction))")), Module1.cnProductionPlanning);
-                            if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
-                                Module1.cnProductionPlanning.Open();
-                            if (Conversions.ToBoolean(Operators.ConditionalCompareObjectGreater(cmDeleteRight.ExecuteScalar(), 0, false)))
-                            {
-                                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
-                                    Module1.cnProductionPlanning.Close();
-                                cmDeleteRight.Dispose();
-                                MessageBox.Show("بچ انتخاب شده مجاز به حذف نمی باشد" + Constants.vbCrLf + "بعضی از ساب بچ ها وارد مرحله تولید شده اند", Module1.MessagesTitle, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading, false);
-                                return;
-                            }
+            //                // کنترل اینکه آیا تمامی ساب بچها وارد مرحله تولید شده اند یا نه
+            //                cmEditRight.CommandText = Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select Count(*) From Tbl_ProductionSubbatchs Where BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "' And (NOT (SubbatchCode IN(SELECT SubbatchCode FROM Tbl_RealProduction)))"));
+            //                if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
+            //                    Module1.cnProductionPlanning.Open();
+            //                if (Conversions.ToBoolean(Operators.ConditionalCompareObjectEqual(cmEditRight.ExecuteScalar(), 0, false)))
+            //                {
+            //                    if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+            //                        Module1.cnProductionPlanning.Close();
+            //                    cmEditRight.Dispose();
+            //                    MessageBox.Show("بچ انتخاب شده مجاز به تغییر اطلاعات نمی باشد" + Constants.vbCrLf + "تمامی ساب بچ ها وارد مرحله تولید شده اند", Module1.MessagesTitle, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading, false);
+            //                    return;
+            //                }
+            //                else
+            //                {
+            //                    if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+            //                        Module1.cnProductionPlanning.Close();
+            //                    cmEditRight.Dispose();
+            //                    EditMode = 2; // برخی از ساب بچ ها وارد مرحله تولید شده اند
+            //                    goto FillDataSet;
+            //                }
+            //            }
+            //            else if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                var cmDeleteRight = new System.Data.SqlClient.SqlCommand(Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select Count(*) From Tbl_ProductionSubbatchs Where BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "' And (SubbatchCode IN(SELECT SubbatchCode FROM Tbl_RealProduction))")), Module1.cnProductionPlanning);
+            //                if (Module1.cnProductionPlanning.State == ConnectionState.Closed)
+            //                    Module1.cnProductionPlanning.Open();
+            //                if (Conversions.ToBoolean(Operators.ConditionalCompareObjectGreater(cmDeleteRight.ExecuteScalar(), 0, false)))
+            //                {
+            //                    if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+            //                        Module1.cnProductionPlanning.Close();
+            //                    cmDeleteRight.Dispose();
+            //                    MessageBox.Show("بچ انتخاب شده مجاز به حذف نمی باشد" + Constants.vbCrLf + "بعضی از ساب بچ ها وارد مرحله تولید شده اند", Module1.MessagesTitle, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading, false);
+            //                    return;
+            //                }
 
-                            if (Module1.cnProductionPlanning.State == ConnectionState.Open)
-                                Module1.cnProductionPlanning.Close();
-                            cmDeleteRight.Dispose();
-                        }
+            //                if (Module1.cnProductionPlanning.State == ConnectionState.Open)
+            //                    Module1.cnProductionPlanning.Close();
+            //                cmDeleteRight.Dispose();
+            //            }
 
-                    FillDataSet:
-                        ;
-                        DataSetConfig.FillDataSet("Tbl_Products", "Tbl_Products", "Select * From Tbl_Products Order By ProductName", "ProductCode");
-                        DataSetConfig.FillDataSet("Tbl_ProductTree", "Tbl_ProductTree", "Select * From Tbl_ProductTree Order By TreeTitle", "TreeCode");
-                        if (FormMode != (int)Module1.FormModeEnum.INSERT_MODE)
-                        {
-                            string SubbatchsCode = Constants.vbNullString;
-                            DataSetConfig.FillDataSet("Tbl_ProductionSubbatchs", "Tbl_ProductionSubbatchs", Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select * From Tbl_ProductionSubbatchs Where BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "'")), "SubbatchCode");
-                            DataSetConfig.FillDataSet("Tbl_RealProduction", "Tbl_RealProduction", "Select * FROM Tbl_RealProduction", "ProductionCode");
-                            var loopTo = dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Rows.Count - 1;
-                            for (I = 0; I <= loopTo; I++)
-                            {
-                                if (I == 0)
-                                {
-                                    SubbatchsCode = Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("'", dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Rows[I]["SubbatchCode"]), "'"));
-                                }
-                                else
-                                {
-                                    SubbatchsCode = Conversions.ToString(SubbatchsCode + Operators.ConcatenateObject(Operators.ConcatenateObject(",'", dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Rows[I]["SubbatchCode"]), "'"));
-                                }
-                            }
+            //        FillDataSet:
+            //            ;
+            //            DataSetConfig.FillDataSet("Tbl_Products", "Tbl_Products", "Select * From Tbl_Products Order By ProductName", "ProductCode");
+            //            DataSetConfig.FillDataSet("Tbl_ProductTree", "Tbl_ProductTree", "Select * From Tbl_ProductTree Order By TreeTitle", "TreeCode");
+            //            if (FormMode != (int)Module1.FormModeEnum.INSERT_MODE)
+            //            {
+            //                string SubbatchsCode = Constants.vbNullString;
+            //                DataSetConfig.FillDataSet("Tbl_ProductionSubbatchs", "Tbl_ProductionSubbatchs", Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select * From Tbl_ProductionSubbatchs Where BatchCode='", dgList.CurrentRow.Cells["BatchCode"].Value), "'")), "SubbatchCode");
+            //                DataSetConfig.FillDataSet("Tbl_RealProduction", "Tbl_RealProduction", "Select * FROM Tbl_RealProduction", "ProductionCode");
+            //                var loopTo = dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Rows.Count - 1;
+            //                for (I = 0; I <= loopTo; I++)
+            //                {
+            //                    if (I == 0)
+            //                    {
+            //                        SubbatchsCode = Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("'", dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Rows[I]["SubbatchCode"]), "'"));
+            //                    }
+            //                    else
+            //                    {
+            //                        SubbatchsCode = Conversions.ToString(SubbatchsCode + Operators.ConcatenateObject(Operators.ConcatenateObject(",'", dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Rows[I]["SubbatchCode"]), "'"));
+            //                    }
+            //                }
 
-                            DataSetConfig.FillDataSet("Tbl_Planning", "Tbl_Planning", "SELECT * FROM Tbl_Planning Where SubbatchCode IN(" + SubbatchsCode + ")", "PlanningCode");
-                        }
-                        else
-                        {
-                            DataSetConfig.FillDataSet("Tbl_ProductionSubbatchs", "Tbl_ProductionSubbatchs", "Select * From Tbl_ProductionSubbatchs  Where BatchCode=''", "SubbatchCode");
-                            DataSetConfig.FillDataSet("Tbl_RealProduction", "Tbl_RealProduction", "Select * From Tbl_RealProduction", "ProductionCode");
-                            DataSetConfig.FillDataSet("Tbl_Planning", "Tbl_Planning", "Select * From Tbl_Planning Where SubbatchCode=''", "PlanningCode");
-                        }
+            //                DataSetConfig.FillDataSet("Tbl_Planning", "Tbl_Planning", "SELECT * FROM Tbl_Planning Where SubbatchCode IN(" + SubbatchsCode + ")", "PlanningCode");
+            //            }
+            //            else
+            //            {
+            //                DataSetConfig.FillDataSet("Tbl_ProductionSubbatchs", "Tbl_ProductionSubbatchs", "Select * From Tbl_ProductionSubbatchs  Where BatchCode=''", "SubbatchCode");
+            //                DataSetConfig.FillDataSet("Tbl_RealProduction", "Tbl_RealProduction", "Select * From Tbl_RealProduction", "ProductionCode");
+            //                DataSetConfig.FillDataSet("Tbl_Planning", "Tbl_Planning", "Select * From Tbl_Planning Where SubbatchCode=''", "PlanningCode");
+            //            }
 
-                        // ----------------- تنظیم محدودیت کلید خارجی بین ستونها --------------------
-                        // تنظیم محدودیت کلید خارجی برای جدول بج های تولید و جدول محصولات
-                        fkColumn = new ForeignKeyConstraint("fkColumn__Products_v_ProductionBatchs", dsProductionPlanning.Tables["Tbl_Products"].Columns["ProductCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductCode"]);
-                        fkColumn.AcceptRejectRule = AcceptRejectRule.None;
-                        fkColumn.DeleteRule = Rule.None;
-                        fkColumn.UpdateRule = Rule.Cascade;
-                        dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Constraints.Add(fkColumn);
-                        // تنظیم محدودیت کلید خارجی برای جدول بج های تولید و جدول درختهای محصول
-                        fkColumn = new ForeignKeyConstraint("fkColumn__ProductTree_v_ProductionBatchs", dsProductionPlanning.Tables["Tbl_ProductTree"].Columns["TreeCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductTreeCode"]);
-                        fkColumn.AcceptRejectRule = AcceptRejectRule.None;
-                        fkColumn.DeleteRule = Rule.None;
-                        fkColumn.UpdateRule = Rule.Cascade;
-                        dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Constraints.Add(fkColumn);
-                        // تنظیم محدودیت کلید خارجی برای جدول بج های تولید و جدول ساب بچ های تولید
-                        fkColumn = new ForeignKeyConstraint("fkColumn_ProductionBatchs_v_ProductionSubbatchs", dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["BatchCode"], dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Columns["BatchCode"]);
-                        fkColumn.AcceptRejectRule = AcceptRejectRule.None;
-                        fkColumn.DeleteRule = Rule.None;
-                        fkColumn.UpdateRule = Rule.Cascade;
-                        dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Constraints.Add(fkColumn);
+            //            // ----------------- تنظیم محدودیت کلید خارجی بین ستونها --------------------
+            //            // تنظیم محدودیت کلید خارجی برای جدول بج های تولید و جدول محصولات
+            //            fkColumn = new ForeignKeyConstraint("fkColumn__Products_v_ProductionBatchs", dsProductionPlanning.Tables["Tbl_Products"].Columns["ProductCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductCode"]);
+            //            fkColumn.AcceptRejectRule = AcceptRejectRule.None;
+            //            fkColumn.DeleteRule = Rule.None;
+            //            fkColumn.UpdateRule = Rule.Cascade;
+            //            dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Constraints.Add(fkColumn);
+            //            // تنظیم محدودیت کلید خارجی برای جدول بج های تولید و جدول درختهای محصول
+            //            fkColumn = new ForeignKeyConstraint("fkColumn__ProductTree_v_ProductionBatchs", dsProductionPlanning.Tables["Tbl_ProductTree"].Columns["TreeCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductTreeCode"]);
+            //            fkColumn.AcceptRejectRule = AcceptRejectRule.None;
+            //            fkColumn.DeleteRule = Rule.None;
+            //            fkColumn.UpdateRule = Rule.Cascade;
+            //            dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Constraints.Add(fkColumn);
+            //            // تنظیم محدودیت کلید خارجی برای جدول بج های تولید و جدول ساب بچ های تولید
+            //            fkColumn = new ForeignKeyConstraint("fkColumn_ProductionBatchs_v_ProductionSubbatchs", dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["BatchCode"], dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Columns["BatchCode"]);
+            //            fkColumn.AcceptRejectRule = AcceptRejectRule.None;
+            //            fkColumn.DeleteRule = Rule.None;
+            //            fkColumn.UpdateRule = Rule.Cascade;
+            //            dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Constraints.Add(fkColumn);
 
-                        // ----------------- تنظیم روابط بین ستونها --------------------
-                        // تنظیم رابطه بین جدول جدول بچ های تولید و جدول محصولات بوسیله ستون کد محصول
-                        dsProductionPlanning.Relations.Add("Products_ProductionBatchs", dsProductionPlanning.Tables["Tbl_Products"].Columns["ProductCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductCode"]);
-                        // تنظیم رابطه بین جدول جدول بچ های تولید و جدول درختهای محصول بوسیله ستون کد درخت
-                        dsProductionPlanning.Relations.Add("ProductTree_ProductionBatchs", dsProductionPlanning.Tables["Tbl_ProductTree"].Columns["TreeCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductTreeCode"]);
-                        // تنظیم رابطه بین جدول جدول بچ های تولید و جدول ساب بچ های تولید بوسیله ستون کد بچ
-                        dsProductionPlanning.Relations.Add("ProductionBatchs_ProductionSubbatchs", dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["BatchCode"], dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Columns["BatchCode"]);
-                        frmProductionBatch objForm = new frmProductionBatch();
-                        if (mFormMode == (int)Module1.FormModeEnum.EDIT_MODE)
-                        {
-                            objForm.EditMode =(short) EditMode;
-                        }
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
+            //            // ----------------- تنظیم روابط بین ستونها --------------------
+            //            // تنظیم رابطه بین جدول جدول بچ های تولید و جدول محصولات بوسیله ستون کد محصول
+            //            dsProductionPlanning.Relations.Add("Products_ProductionBatchs", dsProductionPlanning.Tables["Tbl_Products"].Columns["ProductCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductCode"]);
+            //            // تنظیم رابطه بین جدول جدول بچ های تولید و جدول درختهای محصول بوسیله ستون کد درخت
+            //            dsProductionPlanning.Relations.Add("ProductTree_ProductionBatchs", dsProductionPlanning.Tables["Tbl_ProductTree"].Columns["TreeCode"], dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["ProductTreeCode"]);
+            //            // تنظیم رابطه بین جدول جدول بچ های تولید و جدول ساب بچ های تولید بوسیله ستون کد بچ
+            //            dsProductionPlanning.Relations.Add("ProductionBatchs_ProductionSubbatchs", dsProductionPlanning.Tables["Tbl_ProductionBatchs"].Columns["BatchCode"], dsProductionPlanning.Tables["Tbl_ProductionSubbatchs"].Columns["BatchCode"]);
+            //            frmProductionBatch objForm = new frmProductionBatch();
+            //            if (mFormMode == (int)Module1.FormModeEnum.EDIT_MODE)
+            //            {
+            //                objForm.EditMode =(short) EditMode;
+            //            }
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
 
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_PRODUCTIONPLANING:
-                    {
-                        var objForm = new frmPlaningSubbatchsList();
+            //    case ListFormCaller.LFC_PRODUCTIONPLANING:
+            //        {
+            //            var objForm = new frmPlaningSubbatchsList();
                         
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_OPERATORS:
-                    {
-                        DataSetConfig.FillDataSet("Tbl_Natures", "Tbl_Natures", "Select * From Tbl_Natures Order By NatureTitle", "NatureCode");
-                        if (mFormMode == (int)Module1.FormModeEnum.INSERT_MODE)
-                        {
-                            DataSetConfig.FillDataSet("Tbl_OperatorWorkPeriods", "Tbl_OperatorWorkPeriods", "Select * From Tbl_OperatorWorkPeriods Where OperatorCode = '-1' Order By StartDate", "OperatorCode", "StartDate");
-                        }
-                        else
-                        {
-                            DataSetConfig.FillDataSet("Tbl_OperatorWorkPeriods", "Tbl_OperatorWorkPeriods", Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select * From Tbl_OperatorWorkPeriods Where OperatorCode = '", dgList.SelectedRows[0].Cells["OperatorCode"].Value), "' Order By StartDate")), "OperatorCode", "StartDate");
-                        }
+            //    case ListFormCaller.LFC_OPERATORS:
+            //        {
+            //            DataSetConfig.FillDataSet("Tbl_Natures", "Tbl_Natures", "Select * From Tbl_Natures Order By NatureTitle", "NatureCode");
+            //            if (mFormMode == (int)Module1.FormModeEnum.INSERT_MODE)
+            //            {
+            //                DataSetConfig.FillDataSet("Tbl_OperatorWorkPeriods", "Tbl_OperatorWorkPeriods", "Select * From Tbl_OperatorWorkPeriods Where OperatorCode = '-1' Order By StartDate", "OperatorCode", "StartDate");
+            //            }
+            //            else
+            //            {
+            //                DataSetConfig.FillDataSet("Tbl_OperatorWorkPeriods", "Tbl_OperatorWorkPeriods", Conversions.ToString(Operators.ConcatenateObject(Operators.ConcatenateObject("Select * From Tbl_OperatorWorkPeriods Where OperatorCode = '", dgList.SelectedRows[0].Cells["OperatorCode"].Value), "' Order By StartDate")), "OperatorCode", "StartDate");
+            //            }
 
-                        var objForm = new frmOperator();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //            var objForm = new frmOperator();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_OPERATIONUNITS:
-                    {
-                        SelectStr = "Select   Distinct OperationCode,OperationCode+' '+OperationTitle As OperationTitle " + "From     dbo.Tbl_ProductOPCs " + "Order By OperationCode";
-                        DataSetConfig.FillDataSet("TblOperations", "TblOperations", SelectStr, "OperationCode");
-                        DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_TestUnits", "Select * From Tbl_TestUnits", "Code");
-                        frmOperationUnit objForm = new frmOperationUnit();
+            //    case ListFormCaller.LFC_OPERATIONUNITS:
+            //        {
+            //            SelectStr = "Select   Distinct OperationCode,OperationCode+' '+OperationTitle As OperationTitle " + "From     dbo.Tbl_ProductOPCs " + "Order By OperationCode";
+            //            DataSetConfig.FillDataSet("TblOperations", "TblOperations", SelectStr, "OperationCode");
+            //            DataSetConfig.FillDataSet("Tbl_TestUnits", "Tbl_TestUnits", "Select * From Tbl_TestUnits", "Code");
+            //            frmOperationUnit objForm = new frmOperationUnit();
                                                 
-                        objForm.dsOperationUnit = DataSetConfig.dsProductionPlanning;
-                        objForm.SetFormMode((short) mFormMode);
-                        switch (mFormMode)
-                        {
-                            case (int)Module1.FormModeEnum.EDIT_MODE:
-                            case (int)Module1.FormModeEnum.DELETE_MODE:
-                                {
-                                    objForm.CurrentRow = GetRow();
-                                    break;
-                                }
-                        }
+            //            objForm.dsOperationUnit = DataSetConfig.dsProductionPlanning;
+            //            objForm.SetFormMode((short) mFormMode);
+            //            switch (mFormMode)
+            //            {
+            //                case (int)Module1.FormModeEnum.EDIT_MODE:
+            //                case (int)Module1.FormModeEnum.DELETE_MODE:
+            //                    {
+            //                        objForm.CurrentRow = GetRow();
+            //                        break;
+            //                    }
+            //            }
 
-                        objForm.SetFormMode((short)mFormMode);
+            //            objForm.SetFormMode((short)mFormMode);
                         
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_MACHINENOTAVAILABLE:
-                    {
-                        DataSetConfig.FillDataSet("Tbl_Machines", "Tbl_Machines", "Select Code,Code+' '+Name As Name From Tbl_Machines Where Code<>'-1' Order By Code", "Code");
-                        DataSetConfig.FillDataSet("Tbl_MachineNotAvailableReasons", "Tbl_MachineNotAvailableReasons", "Select * From Tbl_MachineNotAvailableReasons", "ReasonCode");
-                        var objForm = new frmMachineNotAvailable();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_MACHINENOTAVAILABLE:
+            //        {
+            //            DataSetConfig.FillDataSet("Tbl_Machines", "Tbl_Machines", "Select Code,Code+' '+Name As Name From Tbl_Machines Where Code<>'-1' Order By Code", "Code");
+            //            DataSetConfig.FillDataSet("Tbl_MachineNotAvailableReasons", "Tbl_MachineNotAvailableReasons", "Select * From Tbl_MachineNotAvailableReasons", "ReasonCode");
+            //            var objForm = new frmMachineNotAvailable();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_HALTREASON:
-                    {
-                        var objForm = new frmHaltReason();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_HALTREASON:
+            //        {
+            //            var objForm = new frmHaltReason();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_CUSTOMERS:
-                    {
-                        var objForm = new frmCustomer();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        DetailsResult = objForm.ShowDialog();
-                        objForm.Dispose();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_CUSTOMERS:
+            //        {
+            //            var objForm = new frmCustomer();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            DetailsResult = objForm.ShowDialog();
+            //            objForm.Dispose();
+            //            break;
+            //        }
 
-                case ListFormCaller.LFC_OEE:
-                    {
-                        var objForm = new frmOEE();
-                        objForm.ListForm = this;
-                        objForm.ListForm.FormMode = mFormMode;
-                        if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
-                        {
-                            objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
-                            objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
-                        }
-                        objForm.MdiParent = MdiParent;
-                        objForm.Show();
-                        break;
-                    }
+            //    case ListFormCaller.LFC_OEE:
+            //        {
+            //            var objForm = new frmOEE();
+            //            objForm.ListForm = this;
+            //            objForm.ListForm.FormMode = mFormMode;
+            //            if (mFormMode == (int)Module1.FormModeEnum.DELETE_MODE)
+            //            {
+            //                objForm.Controls["Panel1"].Controls["cmdSave"].Visible = false;
+            //                objForm.Controls["Panel1"].Controls["cmdDelete"].Visible = true;
+            //            }
+            //            objForm.MdiParent = MdiParent;
+            //            objForm.Show();
+            //            break;
+            //        }
 
-                default:
-                    {
-                        DetailsResult = DialogResult.Cancel;
-                        break;
-                        //return;
-                    }
-            }
+            //    default:
+            //        {
+            //            DetailsResult = DialogResult.Cancel;
+            //            break;
+            //            //return;
+            //        }
+            //}
 
             //int DetailsResult = -1;
             //if (Conversions.ToBoolean(Operators.ConditionalCompareObjectNotEqual(Tag, ListFormCaller.LFC_OPERATIONUNITS, false)))
